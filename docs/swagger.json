@@ -3,7 +3,7 @@
     "info": {
         "version": "1.0.0",
         "title": "Interactive Steem API",
-        "description": "Interactive Steem API lets you interact with Steem Blockchain and make a request, get output and start implementing new apps! APIs have default parameters set to get you started and see how request works. API list is compiled from [Steem Github](https://github.com/steemit/steem) [1](https://github.com/steemit/steem/tree/master/libraries/app/include/steemit/app/api.hpp) and [2](https://github.com/steemit/steem/tree/master/libraries/app/include/steemit/app/database_api.hpp). If you want to contribute documenting detail of properties and output, contact [@good-karma]('https://steemit.chat/direct/good-karma')",
+        "description": "Interactive Steem API lets you interact with Steem Blockchain and make a request, get output and start implementing new apps! APIs have default parameters set to get you started and see how request works. API list is compiled from [Steem Github](https://github.com/steemit/steem) [1](https://github.com/steemit/steem/tree/master/libraries/app/include/steemit/app/api.hpp) and [2](https://github.com/steemit/steem/tree/master/libraries/app/include/steemit/app/database_api.hpp). If you want to contribute documenting detail of properties and output, contact [@good-karma](https://steemit.chat/direct/good-karma). You can also check full list here [Steem.js](https://steemjs.com)",
         "termsOfService": "",
         "license": {
             "name": "Apache 2.0",
@@ -25,8 +25,8 @@
     "paths": {
         "/get_version": {
             "get": {
-                "summary": "get_version",
-                "description": "get_version\n",
+                "summary": "get version of Steem",
+                "description": "Returns version information of connected Steem node/websocket.\n",
                 "tags": [
                     "Chain"
                 ],
@@ -34,10 +34,7 @@
                     "200": {
                         "description": "Result",
                         "schema": {
-                            "type": "array",
-                            "items": {
-                                "$ref": "#/definitions/_"
-                            }
+                            "$ref": "#/definitions/get_version"
                         }
                     },
                     "default": {
@@ -60,9 +57,9 @@
                     "200": {
                         "description": "Result",
                         "schema": {
-                            "type": "object",
+                            "type": "integer",
                             "items": {
-                                "$ref": "#/definitions/_"
+                                "$ref": "#/definitions/get_account_count"
                             }
                         }
                     },
@@ -3115,6 +3112,27 @@
                     "description": "description of item1"
                 }
             }
+        },
+        "get_version": {
+            "type": "object",
+            "properties": {
+                "blockchain_version": {
+                    "type": "string",
+                    "description": "release version of blockchain"
+                },
+                "steem_revision": {
+                    "type": "string",
+                    "description": "steem revision hash"
+                },
+                "fc_revision": {
+                    "type": "string",
+                    "description": "fc library revision hash"
+                }
+            }
+        },
+        "get_account_count": {
+            "type": "number",
+            "description": "number of registered accounts"
         },
         "Accounts": {
             "type": "object",
