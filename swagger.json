@@ -3107,9 +3107,13 @@
             "type": "object",
             "description": "describe output object json and properties",
             "properties": {
-                "item1": {
+                "example": {
                     "type": "string",
-                    "description": "description of item1"
+                    "description": "description of example"
+                },
+                "example_": {
+                    "type": "string",
+                    "description": "description of example_ etc."
                 }
             }
         },
