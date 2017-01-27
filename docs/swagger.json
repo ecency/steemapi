@@ -1,0 +1,3157 @@
+{
+    "swagger": "2.0",
+    "info": {
+        "version": "1.0.0",
+        "title": "Interactive Steem API",
+        "description": "Interactive Steem API lets you interact with Steem Blockchain and make a request, get output and start implementing new apps! APIs have default parameters set to get you started and see how request works. API list is compiled from [Steem Github](https://github.com/steemit/steem) [1](https://github.com/steemit/steem/tree/master/libraries/app/include/steemit/app/api.hpp) and [2](https://github.com/steemit/steem/tree/master/libraries/app/include/steemit/app/database_api.hpp). If you want to contribute documenting detail of properties and output, contact [@good-karma]('https://steemit.chat/direct/good-karma')",
+        "termsOfService": "",
+        "license": {
+            "name": "Apache 2.0",
+            "url": "http://www.apache.org/licenses/LICENSE-2.0.html"
+        }
+    },
+    "host": "api.steemjs.com",
+    "basePath": "/",
+    "schemes": [
+        "https",
+        "http"
+    ],
+    "consumes": [
+        "application/json"
+    ],
+    "produces": [
+        "application/json"
+    ],
+    "paths": {
+        "/get_version": {
+            "get": {
+                "summary": "get_version",
+                "description": "get_version\n",
+                "tags": [
+                    "Chain"
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Result",
+                        "schema": {
+                            "type": "array",
+                            "items": {
+                                "$ref": "#/definitions/_"
+                            }
+                        }
+                    },
+                    "default": {
+                        "description": "Unexpected error",
+                        "schema": {
+                            "$ref": "#/definitions/Error"
+                        }
+                    }
+                }
+            }
+        },
+        "/get_account_count": {
+            "get": {
+                "summary": "number of accounts",
+                "description": "Get Number of Accounts from Steem\n",
+                "tags": [
+                    "Chain"
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Result",
+                        "schema": {
+                            "type": "object",
+                            "items": {
+                                "$ref": "#/definitions/_"
+                            }
+                        }
+                    },
+                    "default": {
+                        "description": "Unexpected error",
+                        "schema": {
+                            "$ref": "#/definitions/Error"
+                        }
+                    }
+                }
+            }
+        },
+        "/get_chain_properties": {
+            "get": {
+                "summary": "get chain properties",
+                "description": "get chain properties\n",
+                "tags": [
+                    "Chain"
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Result",
+                        "schema": {
+                            "type": "array",
+                            "items": {
+                                "$ref": "#/definitions/_"
+                            }
+                        }
+                    },
+                    "default": {
+                        "description": "Unexpected error",
+                        "schema": {
+                            "$ref": "#/definitions/Error"
+                        }
+                    }
+                }
+            }
+        },
+        "/get_config": {
+            "get": {
+                "summary": "get config",
+                "description": "get config\n",
+                "tags": [
+                    "Chain"
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Result",
+                        "schema": {
+                            "type": "array",
+                            "items": {
+                                "$ref": "#/definitions/_"
+                            }
+                        }
+                    },
+                    "default": {
+                        "description": "Unexpected error",
+                        "schema": {
+                            "$ref": "#/definitions/Error"
+                        }
+                    }
+                }
+            }
+        },
+        "/get_dynamic_global_properties": {
+            "get": {
+                "summary": "get_dynamic_global_properties",
+                "description": "get_dynamic_global_properties\n",
+                "tags": [
+                    "Chain"
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Result",
+                        "schema": {
+                            "type": "array",
+                            "items": {
+                                "$ref": "#/definitions/_"
+                            }
+                        }
+                    },
+                    "default": {
+                        "description": "Unexpected error",
+                        "schema": {
+                            "$ref": "#/definitions/Error"
+                        }
+                    }
+                }
+            }
+        },
+        "/get_feed_history": {
+            "get": {
+                "summary": "get_feed_history",
+                "description": "get_feed_history\n",
+                "tags": [
+                    "Chain"
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Result",
+                        "schema": {
+                            "type": "array",
+                            "items": {
+                                "$ref": "#/definitions/_"
+                            }
+                        }
+                    },
+                    "default": {
+                        "description": "Unexpected error",
+                        "schema": {
+                            "$ref": "#/definitions/Error"
+                        }
+                    }
+                }
+            }
+        },
+        "/get_current_median_history_price": {
+            "get": {
+                "summary": "get_current_median_history_price",
+                "description": "get_current_median_history_price\n",
+                "tags": [
+                    "Chain"
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Result",
+                        "schema": {
+                            "type": "array",
+                            "items": {
+                                "$ref": "#/definitions/_"
+                            }
+                        }
+                    },
+                    "default": {
+                        "description": "Unexpected error",
+                        "schema": {
+                            "$ref": "#/definitions/Error"
+                        }
+                    }
+                }
+            }
+        },
+        "/get_hardfork_version": {
+            "get": {
+                "summary": "get_hardfork_version",
+                "description": "get_hardfork_version\n",
+                "tags": [
+                    "Chain"
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Result",
+                        "schema": {
+                            "type": "array",
+                            "items": {
+                                "$ref": "#/definitions/_"
+                            }
+                        }
+                    },
+                    "default": {
+                        "description": "Unexpected error",
+                        "schema": {
+                            "$ref": "#/definitions/Error"
+                        }
+                    }
+                }
+            }
+        },
+        "/get_next_scheduled_hardfork": {
+            "get": {
+                "summary": "get_next_scheduled_hardfork",
+                "description": "get_next_scheduled_hardfork\n",
+                "tags": [
+                    "Chain"
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Result",
+                        "schema": {
+                            "type": "array",
+                            "items": {
+                                "$ref": "#/definitions/_"
+                            }
+                        }
+                    },
+                    "default": {
+                        "description": "Unexpected error",
+                        "schema": {
+                            "$ref": "#/definitions/Error"
+                        }
+                    }
+                }
+            }
+        },
+        "/get_witness_count": {
+            "get": {
+                "summary": "get_witness_count",
+                "description": "get_witness_count\n",
+                "tags": [
+                    "Witness"
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Result",
+                        "schema": {
+                            "type": "array",
+                            "items": {
+                                "$ref": "#/definitions/_"
+                            }
+                        }
+                    },
+                    "default": {
+                        "description": "Unexpected error",
+                        "schema": {
+                            "$ref": "#/definitions/Error"
+                        }
+                    }
+                }
+            }
+        },
+        "/lookup_witness_accounts": {
+            "get": {
+                "summary": "lookup_witness_accounts",
+                "description": "lookup_witness_accounts regex search\n",
+                "parameters": [
+                    {
+                        "name": "lowerBoundName",
+                        "in": "query",
+                        "description": "lowerBoundName.",
+                        "required": true,
+                        "type": "string",
+                        "format": "string",
+                        "default": "good-kar"
+                    },
+                    {
+                        "name": "limit",
+                        "in": "query",
+                        "description": "limit.",
+                        "required": true,
+                        "type": "number",
+                        "format": "number",
+                        "default": 10
+                    }
+                ],
+                "tags": [
+                    "Witness"
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Result",
+                        "schema": {
+                            "type": "array",
+                            "items": {
+                                "$ref": "#/definitions/_"
+                            }
+                        }
+                    },
+                    "default": {
+                        "description": "Unexpected error",
+                        "schema": {
+                            "$ref": "#/definitions/Error"
+                        }
+                    }
+                }
+            }
+        },
+        "/get_witness_schedule": {
+            "get": {
+                "summary": "get_witness_schedule",
+                "description": "get_witness_schedule\n",
+                "tags": [
+                    "Witness"
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Result",
+                        "schema": {
+                            "type": "array",
+                            "items": {
+                                "$ref": "#/definitions/_"
+                            }
+                        }
+                    },
+                    "default": {
+                        "description": "Unexpected error",
+                        "schema": {
+                            "$ref": "#/definitions/Error"
+                        }
+                    }
+                }
+            }
+        },
+        "/get_witnesses": {
+            "get": {
+                "summary": "get_witnesses",
+                "description": "get_witnesses\n",
+                "parameters": [
+                    {
+                        "name": "witnessIds",
+                        "in": "query",
+                        "description": "witnessIds.",
+                        "required": true,
+                        "type": "string",
+                        "format": "string",
+                        "default": "[\"231\",\"12286\"]"
+                    }
+                ],
+                "tags": [
+                    "Witness"
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Result",
+                        "schema": {
+                            "type": "array",
+                            "items": {
+                                "$ref": "#/definitions/_"
+                            }
+                        }
+                    },
+                    "default": {
+                        "description": "Unexpected error",
+                        "schema": {
+                            "$ref": "#/definitions/Error"
+                        }
+                    }
+                }
+            }
+        },
+        "/get_witness_by_account": {
+            "get": {
+                "summary": "get_witness_by_account",
+                "description": "get_witness_by_account\n",
+                "parameters": [
+                    {
+                        "name": "accountName",
+                        "in": "query",
+                        "description": "witness account name.",
+                        "required": true,
+                        "type": "string",
+                        "format": "string",
+                        "default": "good-karma"
+                    }
+                ],
+                "tags": [
+                    "Witness"
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Result",
+                        "schema": {
+                            "type": "array",
+                            "items": {
+                                "$ref": "#/definitions/_"
+                            }
+                        }
+                    },
+                    "default": {
+                        "description": "Unexpected error",
+                        "schema": {
+                            "$ref": "#/definitions/Error"
+                        }
+                    }
+                }
+            }
+        },
+        "/get_witnesses_by_vote": {
+            "get": {
+                "summary": "get_witnesses_by_vote",
+                "description": "get_witnesses_by_vote\n",
+                "parameters": [
+                    {
+                        "name": "from",
+                        "in": "query",
+                        "description": "from witness.",
+                        "required": true,
+                        "type": "string",
+                        "format": "string",
+                        "default": "good-karma"
+                    },
+                    {
+                        "name": "limit",
+                        "in": "query",
+                        "description": "limit.",
+                        "required": true,
+                        "type": "integer",
+                        "format": "int32",
+                        "default": 10
+                    }
+                ],
+                "tags": [
+                    "Witness"
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Result",
+                        "schema": {
+                            "type": "array",
+                            "items": {
+                                "$ref": "#/definitions/_"
+                            }
+                        }
+                    },
+                    "default": {
+                        "description": "Unexpected error",
+                        "schema": {
+                            "$ref": "#/definitions/Error"
+                        }
+                    }
+                }
+            }
+        },
+        "/get_active_witnesses": {
+            "get": {
+                "summary": "get_active_witnesses",
+                "description": "get_active_witnesses\n",
+                "tags": [
+                    "Witness"
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Result",
+                        "schema": {
+                            "type": "array",
+                            "items": {
+                                "$ref": "#/definitions/_"
+                            }
+                        }
+                    },
+                    "default": {
+                        "description": "Unexpected error",
+                        "schema": {
+                            "$ref": "#/definitions/Error"
+                        }
+                    }
+                }
+            }
+        },
+        "/get_miner_queue": {
+            "get": {
+                "summary": "get_miner_queue",
+                "description": "get_miner_queue\n",
+                "tags": [
+                    "Witness"
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Result",
+                        "schema": {
+                            "type": "array",
+                            "items": {
+                                "$ref": "#/definitions/_"
+                            }
+                        }
+                    },
+                    "default": {
+                        "description": "Unexpected error",
+                        "schema": {
+                            "$ref": "#/definitions/Error"
+                        }
+                    }
+                }
+            }
+        },
+        "/get_liquidity_queue": {
+            "get": {
+                "summary": "get_liquidity_queue",
+                "description": "get_liquidity_queue\n",
+                "parameters": [
+                    {
+                        "name": "startAccount",
+                        "in": "query",
+                        "description": "account name.",
+                        "required": true,
+                        "type": "string",
+                        "format": "string",
+                        "default": "good-karma"
+                    },
+                    {
+                        "name": "limit",
+                        "in": "query",
+                        "description": "limit.",
+                        "required": true,
+                        "type": "integer",
+                        "format": "int32",
+                        "default": 10
+                    }
+                ],
+                "tags": [
+                    "Market"
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Result",
+                        "schema": {
+                            "type": "array",
+                            "items": {
+                                "$ref": "#/definitions/_"
+                            }
+                        }
+                    },
+                    "default": {
+                        "description": "Unexpected error",
+                        "schema": {
+                            "$ref": "#/definitions/Error"
+                        }
+                    }
+                }
+            }
+        },
+        "/get_open_orders": {
+            "get": {
+                "summary": "get_open_orders",
+                "description": "get_open_orders\n",
+                "parameters": [
+                    {
+                        "name": "owner",
+                        "in": "query",
+                        "description": "account name.",
+                        "required": true,
+                        "type": "string",
+                        "format": "string",
+                        "default": "good-karma"
+                    }
+                ],
+                "tags": [
+                    "Market"
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Result",
+                        "schema": {
+                            "type": "array",
+                            "items": {
+                                "$ref": "#/definitions/_"
+                            }
+                        }
+                    },
+                    "default": {
+                        "description": "Unexpected error",
+                        "schema": {
+                            "$ref": "#/definitions/Error"
+                        }
+                    }
+                }
+            }
+        },
+        "/get_order_book": {
+            "get": {
+                "summary": "get_order_book",
+                "description": "get_order_book\n",
+                "parameters": [
+                    {
+                        "name": "limit",
+                        "in": "query",
+                        "description": "limit.",
+                        "required": true,
+                        "type": "integer",
+                        "format": "int32",
+                        "default": 10
+                    }
+                ],
+                "tags": [
+                    "Market"
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Result",
+                        "schema": {
+                            "type": "array",
+                            "items": {
+                                "$ref": "#/definitions/_"
+                            }
+                        }
+                    },
+                    "default": {
+                        "description": "Unexpected error",
+                        "schema": {
+                            "$ref": "#/definitions/Error"
+                        }
+                    }
+                }
+            }
+        },
+        "/get_active_categories": {
+            "get": {
+                "summary": "get active categories",
+                "description": "get tags\n",
+                "deprecated": true,
+                "parameters": [
+                    {
+                        "name": "after",
+                        "in": "query",
+                        "description": "after string.",
+                        "required": false,
+                        "type": "string",
+                        "format": "string",
+                        "default": "steem"
+                    },
+                    {
+                        "name": "limit",
+                        "in": "query",
+                        "description": "limit size.",
+                        "required": false,
+                        "type": "integer",
+                        "format": "int32",
+                        "default": 10
+                    }
+                ],
+                "tags": [
+                    "Tags"
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Result",
+                        "schema": {
+                            "type": "array",
+                            "items": {
+                                "$ref": "#/definitions/_"
+                            }
+                        }
+                    },
+                    "default": {
+                        "description": "Unexpected error",
+                        "schema": {
+                            "$ref": "#/definitions/Error"
+                        }
+                    }
+                }
+            }
+        },
+        "/get_best_categories": {
+            "get": {
+                "summary": "get best categories",
+                "description": "get tags\n",
+                "deprecated": true,
+                "parameters": [
+                    {
+                        "name": "after",
+                        "in": "query",
+                        "description": "after.",
+                        "required": false,
+                        "type": "string",
+                        "format": "string",
+                        "default": "steem"
+                    },
+                    {
+                        "name": "limit",
+                        "in": "query",
+                        "description": "limits.",
+                        "required": false,
+                        "type": "number",
+                        "format": "number",
+                        "default": 10
+                    }
+                ],
+                "tags": [
+                    "Tags"
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Result",
+                        "schema": {
+                            "type": "array",
+                            "items": {
+                                "$ref": "#/definitions/_"
+                            }
+                        }
+                    },
+                    "default": {
+                        "description": "Unexpected error",
+                        "schema": {
+                            "$ref": "#/definitions/Error"
+                        }
+                    }
+                }
+            }
+        },
+        "/get_recent_categories": {
+            "get": {
+                "summary": "get recent categories",
+                "description": "get tags\n",
+                "deprecated": true,
+                "parameters": [
+                    {
+                        "name": "after",
+                        "in": "query",
+                        "description": "after.",
+                        "required": false,
+                        "type": "string",
+                        "format": "string",
+                        "default": "steem"
+                    },
+                    {
+                        "name": "limit",
+                        "in": "query",
+                        "description": "limit.",
+                        "required": false,
+                        "type": "integer",
+                        "format": "int32",
+                        "default": 10
+                    }
+                ],
+                "tags": [
+                    "Tags"
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Result",
+                        "schema": {
+                            "type": "array",
+                            "items": {
+                                "$ref": "#/definitions/_"
+                            }
+                        }
+                    },
+                    "default": {
+                        "description": "Unexpected error",
+                        "schema": {
+                            "$ref": "#/definitions/Error"
+                        }
+                    }
+                }
+            }
+        },
+        "/get_trending_categories": {
+            "get": {
+                "summary": "get trending categories",
+                "description": "get tags\n",
+                "parameters": [
+                    {
+                        "name": "after",
+                        "in": "query",
+                        "description": "after.",
+                        "required": false,
+                        "type": "string",
+                        "format": "string",
+                        "default": "steem"
+                    },
+                    {
+                        "name": "limit",
+                        "in": "query",
+                        "description": "limits.",
+                        "required": false,
+                        "type": "number",
+                        "format": "number",
+                        "default": 10
+                    }
+                ],
+                "tags": [
+                    "Tags"
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Result",
+                        "schema": {
+                            "type": "array",
+                            "items": {
+                                "$ref": "#/definitions/_"
+                            }
+                        }
+                    },
+                    "default": {
+                        "description": "Unexpected error",
+                        "schema": {
+                            "$ref": "#/definitions/Error"
+                        }
+                    }
+                }
+            }
+        },
+        "/get_trending_tags": {
+            "get": {
+                "summary": "get trending categories",
+                "description": "get tags\n",
+                "parameters": [
+                    {
+                        "name": "afterTag",
+                        "in": "query",
+                        "description": "category.",
+                        "required": false,
+                        "type": "string",
+                        "format": "string",
+                        "default": "steem"
+                    },
+                    {
+                        "name": "limit",
+                        "in": "query",
+                        "description": "limits.",
+                        "required": false,
+                        "type": "number",
+                        "format": "int",
+                        "default": 10
+                    }
+                ],
+                "tags": [
+                    "Tags"
+                ],
+                "responses": {
+                    "200": {
+                        "description": "An array of products",
+                        "schema": {
+                            "type": "array",
+                            "items": {
+                                "$ref": "#/definitions/_"
+                            }
+                        }
+                    },
+                    "default": {
+                        "description": "Unexpected error",
+                        "schema": {
+                            "$ref": "#/definitions/Error"
+                        }
+                    }
+                }
+            }
+        },
+        "/get_content": {
+            "get": {
+                "summary": "get content",
+                "description": "get content\n",
+                "parameters": [
+                    {
+                        "name": "author",
+                        "in": "query",
+                        "description": "author.",
+                        "required": true,
+                        "type": "string",
+                        "format": "string",
+                        "default": "smooth"
+                    },
+                    {
+                        "name": "permlink",
+                        "in": "query",
+                        "description": "permlink.",
+                        "required": true,
+                        "type": "string",
+                        "format": "string",
+                        "default": "test"
+                    }
+                ],
+                "tags": [
+                    "Post"
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Result",
+                        "schema": {
+                            "type": "array",
+                            "items": {
+                                "$ref": "#/definitions/_"
+                            }
+                        }
+                    },
+                    "default": {
+                        "description": "Unexpected error",
+                        "schema": {
+                            "$ref": "#/definitions/Error"
+                        }
+                    }
+                }
+            }
+        },
+        "/get_content_replies": {
+            "get": {
+                "summary": "get content replies",
+                "description": "get content replies\n",
+                "parameters": [
+                    {
+                        "name": "author",
+                        "in": "query",
+                        "description": "author.",
+                        "required": true,
+                        "type": "string",
+                        "format": "string",
+                        "default": "smooth"
+                    },
+                    {
+                        "name": "permlink",
+                        "in": "query",
+                        "description": "permlink.",
+                        "required": true,
+                        "type": "string",
+                        "format": "string",
+                        "default": "test"
+                    }
+                ],
+                "tags": [
+                    "Post"
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Result",
+                        "schema": {
+                            "type": "array",
+                            "items": {
+                                "$ref": "#/definitions/_"
+                            }
+                        }
+                    },
+                    "default": {
+                        "description": "Unexpected error",
+                        "schema": {
+                            "$ref": "#/definitions/Error"
+                        }
+                    }
+                }
+            }
+        },
+        "/get_discussions_by_trending": {
+            "get": {
+                "summary": "get discussions",
+                "description": "get discussions, | query example {\"limit\":\"10\", \"tag\":\"steem\"} OR {\"start_author\":\"author\", \"permlink\":\"permlink\"} for pagination\n",
+                "parameters": [
+                    {
+                        "name": "query",
+                        "in": "query",
+                        "description": "query object.",
+                        "required": true,
+                        "type": "string",
+                        "format": "string",
+                        "default": "{\"tag\":\"steem\", \"limit\": \"10\"}"
+                    }
+                ],
+                "tags": [
+                    "Post"
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Result",
+                        "schema": {
+                            "type": "array",
+                            "items": {
+                                "$ref": "#/definitions/_"
+                            }
+                        }
+                    },
+                    "default": {
+                        "description": "Unexpected error",
+                        "schema": {
+                            "$ref": "#/definitions/Error"
+                        }
+                    }
+                }
+            }
+        },
+        "/get_discussions_by_trending30": {
+            "get": {
+                "summary": "get discussions",
+                "description": "get discussions, | query example {\"limit\":\"10\", \"tag\":\"steem\"} OR {\"start_author\":\"author\", \"permlink\":\"permlink\"} for pagination\n",
+                "parameters": [
+                    {
+                        "name": "query",
+                        "in": "query",
+                        "description": "query object.",
+                        "required": true,
+                        "type": "string",
+                        "format": "string",
+                        "default": "{\"tag\":\"steem\", \"limit\": \"10\"}"
+                    }
+                ],
+                "tags": [
+                    "Post"
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Result",
+                        "schema": {
+                            "type": "array",
+                            "items": {
+                                "$ref": "#/definitions/_"
+                            }
+                        }
+                    },
+                    "default": {
+                        "description": "Unexpected error",
+                        "schema": {
+                            "$ref": "#/definitions/Error"
+                        }
+                    }
+                }
+            }
+        },
+        "/get_discussions_by_created": {
+            "get": {
+                "summary": "get discussions",
+                "description": "get discussions, | query example {\"limit\":\"10\", \"tag\":\"steem\"} OR {\"start_author\":\"author\", \"permlink\":\"permlink\"} for pagination\n",
+                "parameters": [
+                    {
+                        "name": "query",
+                        "in": "query",
+                        "description": "query object.",
+                        "required": true,
+                        "type": "string",
+                        "format": "string",
+                        "default": "{\"tag\":\"steem\", \"limit\": \"10\"}"
+                    }
+                ],
+                "tags": [
+                    "Post"
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Result",
+                        "schema": {
+                            "type": "array",
+                            "items": {
+                                "$ref": "#/definitions/_"
+                            }
+                        }
+                    },
+                    "default": {
+                        "description": "Unexpected error",
+                        "schema": {
+                            "$ref": "#/definitions/Error"
+                        }
+                    }
+                }
+            }
+        },
+        "/get_discussions_by_active": {
+            "get": {
+                "summary": "get discussions",
+                "description": "get discussions, | query example {\"limit\":\"10\", \"tag\":\"steem\"} OR {\"start_author\":\"author\", \"permlink\":\"permlink\"} for pagination\n",
+                "parameters": [
+                    {
+                        "name": "query",
+                        "in": "query",
+                        "description": "query object.",
+                        "required": true,
+                        "type": "string",
+                        "format": "string",
+                        "default": "{\"tag\":\"steem\", \"limit\": \"10\"}"
+                    }
+                ],
+                "tags": [
+                    "Post"
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Result",
+                        "schema": {
+                            "type": "array",
+                            "items": {
+                                "$ref": "#/definitions/_"
+                            }
+                        }
+                    },
+                    "default": {
+                        "description": "Unexpected error",
+                        "schema": {
+                            "$ref": "#/definitions/Error"
+                        }
+                    }
+                }
+            }
+        },
+        "/get_discussions_by_promoted": {
+            "get": {
+                "summary": "get discussions",
+                "description": "get discussions, | query example {\"limit\":\"10\", \"tag\":\"steem\"} OR {\"start_author\":\"author\", \"permlink\":\"permlink\"} for pagination\n",
+                "parameters": [
+                    {
+                        "name": "query",
+                        "in": "query",
+                        "description": "query object.",
+                        "required": true,
+                        "type": "string",
+                        "format": "string",
+                        "default": "{\"tag\":\"steem\", \"limit\": \"10\"}"
+                    }
+                ],
+                "tags": [
+                    "Post"
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Result",
+                        "schema": {
+                            "type": "array",
+                            "items": {
+                                "$ref": "#/definitions/_"
+                            }
+                        }
+                    },
+                    "default": {
+                        "description": "Unexpected error",
+                        "schema": {
+                            "$ref": "#/definitions/Error"
+                        }
+                    }
+                }
+            }
+        },
+        "/get_discussions_by_cashout": {
+            "get": {
+                "summary": "get discussions",
+                "description": "get discussions, | query example {\"limit\":\"10\", \"tag\":\"steem\"} OR {\"start_author\":\"author\", \"permlink\":\"permlink\"} for pagination\n",
+                "parameters": [
+                    {
+                        "name": "query",
+                        "in": "query",
+                        "description": "query object.",
+                        "required": true,
+                        "type": "string",
+                        "format": "string",
+                        "default": "{\"tag\":\"steem\", \"limit\": \"10\"}"
+                    }
+                ],
+                "tags": [
+                    "Post"
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Result",
+                        "schema": {
+                            "type": "array",
+                            "items": {
+                                "$ref": "#/definitions/_"
+                            }
+                        }
+                    },
+                    "default": {
+                        "description": "Unexpected error",
+                        "schema": {
+                            "$ref": "#/definitions/Error"
+                        }
+                    }
+                }
+            }
+        },
+        "/get_discussions_by_payout": {
+            "get": {
+                "summary": "get discussions",
+                "description": "get discussions, | query example {\"limit\":\"10\", \"tag\":\"steem\"} OR {\"start_author\":\"author\", \"permlink\":\"permlink\"} for pagination\n",
+                "parameters": [
+                    {
+                        "name": "query",
+                        "in": "query",
+                        "description": "query object.",
+                        "required": true,
+                        "type": "string",
+                        "format": "string",
+                        "default": "{\"tag\":\"steem\", \"limit\": \"10\"}"
+                    }
+                ],
+                "tags": [
+                    "Post"
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Result",
+                        "schema": {
+                            "type": "array",
+                            "items": {
+                                "$ref": "#/definitions/_"
+                            }
+                        }
+                    },
+                    "default": {
+                        "description": "Unexpected error",
+                        "schema": {
+                            "$ref": "#/definitions/Error"
+                        }
+                    }
+                }
+            }
+        },
+        "/get_discussions_by_votes": {
+            "get": {
+                "summary": "get discussions",
+                "description": "get discussions, | query example {\"limit\":\"10\", \"tag\":\"steem\"} OR {\"start_author\":\"author\", \"permlink\":\"permlink\"} for pagination\n",
+                "parameters": [
+                    {
+                        "name": "query",
+                        "in": "query",
+                        "description": "query object.",
+                        "required": true,
+                        "type": "string",
+                        "format": "string",
+                        "default": "{\"tag\":\"steem\", \"limit\": \"10\"}"
+                    }
+                ],
+                "tags": [
+                    "Post"
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Result",
+                        "schema": {
+                            "type": "array",
+                            "items": {
+                                "$ref": "#/definitions/_"
+                            }
+                        }
+                    },
+                    "default": {
+                        "description": "Unexpected error",
+                        "schema": {
+                            "$ref": "#/definitions/Error"
+                        }
+                    }
+                }
+            }
+        },
+        "/get_discussions_by_children": {
+            "get": {
+                "summary": "get discussions",
+                "description": "get discussions, | query example {\"limit\":\"10\", \"tag\":\"steem\"} OR {\"start_author\":\"author\", \"permlink\":\"permlink\"} for pagination\n",
+                "parameters": [
+                    {
+                        "name": "query",
+                        "in": "query",
+                        "description": "query object.",
+                        "required": true,
+                        "type": "string",
+                        "format": "string",
+                        "default": "{\"tag\":\"steem\", \"limit\": \"10\"}"
+                    }
+                ],
+                "tags": [
+                    "Post"
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Result",
+                        "schema": {
+                            "type": "array",
+                            "items": {
+                                "$ref": "#/definitions/_"
+                            }
+                        }
+                    },
+                    "default": {
+                        "description": "Unexpected error",
+                        "schema": {
+                            "$ref": "#/definitions/Error"
+                        }
+                    }
+                }
+            }
+        },
+        "/get_discussions_by_hot": {
+            "get": {
+                "summary": "get discussions",
+                "description": "get discussions, | query example {\"limit\":\"10\", \"tag\":\"steem\"} OR {\"start_author\":\"author\", \"permlink\":\"permlink\"} for pagination\n",
+                "parameters": [
+                    {
+                        "name": "query",
+                        "in": "query",
+                        "description": "query object.",
+                        "required": true,
+                        "type": "string",
+                        "format": "string",
+                        "default": "{\"tag\":\"steem\", \"limit\": \"10\"}"
+                    }
+                ],
+                "tags": [
+                    "Post"
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Result",
+                        "schema": {
+                            "type": "array",
+                            "items": {
+                                "$ref": "#/definitions/_"
+                            }
+                        }
+                    },
+                    "default": {
+                        "description": "Unexpected error",
+                        "schema": {
+                            "$ref": "#/definitions/Error"
+                        }
+                    }
+                }
+            }
+        },
+        "/get_discussions_by_feed": {
+            "get": {
+                "summary": "get discussions",
+                "description": "get discussions, | query example {\"limit\":\"10\", \"tags\":\"good-karma\"} OR {\"start_author\":\"author\", \"permlink\":\"permlink\"} for pagination\n",
+                "parameters": [
+                    {
+                        "name": "query",
+                        "in": "query",
+                        "description": "query object.",
+                        "required": true,
+                        "type": "string",
+                        "format": "string",
+                        "default": "{\"tag\":\"good-karma\", \"limit\": \"10\"}"
+                    }
+                ],
+                "tags": [
+                    "Post"
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Result",
+                        "schema": {
+                            "type": "array",
+                            "items": {
+                                "$ref": "#/definitions/_"
+                            }
+                        }
+                    },
+                    "default": {
+                        "description": "Unexpected error",
+                        "schema": {
+                            "$ref": "#/definitions/Error"
+                        }
+                    }
+                }
+            }
+        },
+        "/get_discussions_by_blog": {
+            "get": {
+                "summary": "get discussions",
+                "description": "get discussions, | query example {\"limit\":\"10\", \"tag\":\"good-karma\"} OR {\"start_author\":\"author\", \"permlink\":\"permlink\"} for pagination\n",
+                "parameters": [
+                    {
+                        "name": "query",
+                        "in": "query",
+                        "description": "query object.",
+                        "required": true,
+                        "type": "string",
+                        "format": "string",
+                        "default": "{\"tag\":\"good-karma\", \"limit\": \"10\"}"
+                    }
+                ],
+                "tags": [
+                    "Post"
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Result",
+                        "schema": {
+                            "type": "array",
+                            "items": {
+                                "$ref": "#/definitions/_"
+                            }
+                        }
+                    },
+                    "default": {
+                        "description": "Unexpected error",
+                        "schema": {
+                            "$ref": "#/definitions/Error"
+                        }
+                    }
+                }
+            }
+        },
+        "/get_discussions_by_comments": {
+            "get": {
+                "summary": "get discussions",
+                "description": "get discussions, | query example {\"start_author\":\"author\", \"start_permlink\":\"permlink\", \"limi\":\"10\"}\n",
+                "parameters": [
+                    {
+                        "name": "query",
+                        "in": "query",
+                        "description": "query object.",
+                        "required": true,
+                        "type": "string",
+                        "format": "string",
+                        "default": "{\"start_author\":\"smooth\",\"start_permlink\":\"test\",\"limit\":\"10\"}"
+                    }
+                ],
+                "tags": [
+                    "Post"
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Result",
+                        "schema": {
+                            "type": "array",
+                            "items": {
+                                "$ref": "#/definitions/_"
+                            }
+                        }
+                    },
+                    "default": {
+                        "description": "Unexpected error",
+                        "schema": {
+                            "$ref": "#/definitions/Error"
+                        }
+                    }
+                }
+            }
+        },
+        "/get_discussions_by_author_before_date": {
+            "get": {
+                "summary": "get_discussions_by_author_before_date",
+                "description": "get_discussions_by_author_before_date\n",
+                "parameters": [
+                    {
+                        "name": "author",
+                        "in": "query",
+                        "description": "account name.",
+                        "required": true,
+                        "type": "string",
+                        "format": "string",
+                        "default": "smooth"
+                    },
+                    {
+                        "name": "startPermlink",
+                        "in": "query",
+                        "description": "permlink of post.",
+                        "required": true,
+                        "type": "string",
+                        "format": "string",
+                        "default": "test"
+                    },
+                    {
+                        "name": "beforeDate",
+                        "in": "query",
+                        "description": "date and time.",
+                        "required": true,
+                        "type": "string",
+                        "format": "string",
+                        "default": "2016-07-23T22:00:06"
+                    },
+                    {
+                        "name": "limit",
+                        "in": "query",
+                        "description": "limit query.",
+                        "required": true,
+                        "type": "integer",
+                        "format": "int32",
+                        "default": 10
+                    }
+                ],
+                "tags": [
+                    "Post"
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Result",
+                        "schema": {
+                            "type": "array",
+                            "items": {
+                                "$ref": "#/definitions/_"
+                            }
+                        }
+                    },
+                    "default": {
+                        "description": "Unexpected error",
+                        "schema": {
+                            "$ref": "#/definitions/Error"
+                        }
+                    }
+                }
+            }
+        },
+        "/get_replies_by_last_update": {
+            "get": {
+                "summary": "get_replies_by_last_update",
+                "description": "get_replies_by_last_update\n",
+                "parameters": [
+                    {
+                        "name": "startAuthor",
+                        "in": "query",
+                        "description": "account name.",
+                        "required": true,
+                        "type": "string",
+                        "format": "string",
+                        "default": "smooth"
+                    },
+                    {
+                        "name": "startPermlink",
+                        "in": "query",
+                        "description": "permlink of post.",
+                        "required": true,
+                        "type": "string",
+                        "format": "string",
+                        "default": "test"
+                    },
+                    {
+                        "name": "limit",
+                        "in": "query",
+                        "description": "limit query.",
+                        "required": true,
+                        "type": "integer",
+                        "format": "int32",
+                        "default": 10
+                    }
+                ],
+                "tags": [
+                    "Post"
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Result",
+                        "schema": {
+                            "type": "array",
+                            "items": {
+                                "$ref": "#/definitions/_"
+                            }
+                        }
+                    },
+                    "default": {
+                        "description": "Unexpected error",
+                        "schema": {
+                            "$ref": "#/definitions/Error"
+                        }
+                    }
+                }
+            }
+        },
+        "/get_state": {
+            "get": {
+                "summary": "get_state",
+                "description": "get_state\n",
+                "parameters": [
+                    {
+                        "name": "path",
+                        "in": "query",
+                        "description": "account name.",
+                        "required": true,
+                        "type": "string",
+                        "format": "string",
+                        "default": "/@good-karma"
+                    }
+                ],
+                "tags": [
+                    "Account",
+                    "Post"
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Result",
+                        "schema": {
+                            "type": "array",
+                            "items": {
+                                "$ref": "#/definitions/_"
+                            }
+                        }
+                    },
+                    "default": {
+                        "description": "Unexpected error",
+                        "schema": {
+                            "$ref": "#/definitions/Error"
+                        }
+                    }
+                }
+            }
+        },
+        "/get_active_votes": {
+            "get": {
+                "summary": "get_active_votes",
+                "description": "get_active_votes\n",
+                "parameters": [
+                    {
+                        "name": "author",
+                        "in": "query",
+                        "description": "account name.",
+                        "required": true,
+                        "type": "string",
+                        "format": "string",
+                        "default": "smooth"
+                    },
+                    {
+                        "name": "permlink",
+                        "in": "query",
+                        "description": "permlink of post.",
+                        "required": true,
+                        "type": "string",
+                        "format": "string",
+                        "default": "test"
+                    }
+                ],
+                "tags": [
+                    "Post"
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Result",
+                        "schema": {
+                            "type": "array",
+                            "items": {
+                                "$ref": "#/definitions/_"
+                            }
+                        }
+                    },
+                    "default": {
+                        "description": "Unexpected error",
+                        "schema": {
+                            "$ref": "#/definitions/Error"
+                        }
+                    }
+                }
+            }
+        },
+        "/get_account_votes": {
+            "get": {
+                "summary": "get_account_votes",
+                "description": "get_account_votes\n",
+                "parameters": [
+                    {
+                        "name": "voter",
+                        "in": "query",
+                        "description": "account name.",
+                        "required": true,
+                        "type": "string",
+                        "format": "string",
+                        "default": "smooth"
+                    }
+                ],
+                "tags": [
+                    "Account"
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Result",
+                        "schema": {
+                            "type": "array",
+                            "items": {
+                                "$ref": "#/definitions/_"
+                            }
+                        }
+                    },
+                    "default": {
+                        "description": "Unexpected error",
+                        "schema": {
+                            "$ref": "#/definitions/Error"
+                        }
+                    }
+                }
+            }
+        },
+        "/get_account_history": {
+            "get": {
+                "summary": "Account history",
+                "description": "Account history\n",
+                "parameters": [
+                    {
+                        "name": "account",
+                        "in": "query",
+                        "description": "name of account",
+                        "required": true,
+                        "type": "string",
+                        "format": "string",
+                        "default": "good-karma"
+                    },
+                    {
+                        "name": "from",
+                        "in": "query",
+                        "description": "from",
+                        "type": "number",
+                        "format": "number",
+                        "default": 10
+                    },
+                    {
+                        "name": "limit",
+                        "in": "query",
+                        "description": "limit",
+                        "type": "number",
+                        "format": "number",
+                        "default": 10
+                    }
+                ],
+                "tags": [
+                    "Account"
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Result",
+                        "schema": {
+                            "type": "number",
+                            "items": {
+                                "$ref": "#/definitions/Accounts"
+                            }
+                        }
+                    },
+                    "default": {
+                        "description": "Unexpected error",
+                        "schema": {
+                            "$ref": "#/definitions/Error"
+                        }
+                    }
+                }
+            }
+        },
+        "/get_owner_history": {
+            "get": {
+                "summary": "get_owner_history",
+                "description": "get_owner_history\n",
+                "parameters": [
+                    {
+                        "name": "account",
+                        "in": "query",
+                        "description": "account name.",
+                        "required": true,
+                        "type": "string",
+                        "format": "string",
+                        "default": "good-karma"
+                    }
+                ],
+                "tags": [
+                    "Market"
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Result",
+                        "schema": {
+                            "type": "array",
+                            "items": {
+                                "$ref": "#/definitions/_"
+                            }
+                        }
+                    },
+                    "default": {
+                        "description": "Unexpected error",
+                        "schema": {
+                            "$ref": "#/definitions/Error"
+                        }
+                    }
+                }
+            }
+        },
+        "/get_accounts": {
+            "get": {
+                "summary": "Account",
+                "description": "Get Accounts from Steem\n",
+                "parameters": [
+                    {
+                        "name": "names[]",
+                        "in": "query",
+                        "description": "name of account",
+                        "required": true,
+                        "type": "string",
+                        "format": "string",
+                        "default": "[\"good-karma\", \"fabien\"]"
+                    }
+                ],
+                "tags": [
+                    "Account"
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Result",
+                        "schema": {
+                            "type": "array",
+                            "items": {
+                                "$ref": "#/definitions/_"
+                            }
+                        }
+                    },
+                    "default": {
+                        "description": "Unexpected error",
+                        "schema": {
+                            "$ref": "#/definitions/Error"
+                        }
+                    }
+                }
+            }
+        },
+        "/get_conversion_requests": {
+            "get": {
+                "summary": "get conversation",
+                "description": "get conversation requests of account\n",
+                "parameters": [
+                    {
+                        "name": "accountName",
+                        "in": "query",
+                        "description": "account name.",
+                        "required": true,
+                        "type": "string",
+                        "format": "string",
+                        "default": "good-karma"
+                    }
+                ],
+                "tags": [
+                    "Account"
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Result",
+                        "schema": {
+                            "type": "array",
+                            "items": {
+                                "$ref": "#/definitions/_"
+                            }
+                        }
+                    },
+                    "default": {
+                        "description": "Unexpected error",
+                        "schema": {
+                            "$ref": "#/definitions/Error"
+                        }
+                    }
+                }
+            }
+        },
+        "/get_recovery_request": {
+            "get": {
+                "summary": "get_recovery_request",
+                "description": "get_recovery_request\n",
+                "parameters": [
+                    {
+                        "name": "account",
+                        "in": "query",
+                        "description": "account name.",
+                        "required": true,
+                        "type": "string",
+                        "format": "string",
+                        "default": "good-karma"
+                    }
+                ],
+                "tags": [
+                    "Account"
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Result",
+                        "schema": {
+                            "type": "array",
+                            "items": {
+                                "$ref": "#/definitions/_"
+                            }
+                        }
+                    },
+                    "default": {
+                        "description": "Unexpected error",
+                        "schema": {
+                            "$ref": "#/definitions/Error"
+                        }
+                    }
+                }
+            }
+        },
+        "/lookup_account_names": {
+            "get": {
+                "summary": "lookup_account_names",
+                "description": "lookup_account_names example of accountNames [\"good-karma\", \"fabien\"]\n",
+                "parameters": [
+                    {
+                        "name": "accountNames",
+                        "in": "query",
+                        "description": "accountNames [\"good-karma\", \"fabien\"].",
+                        "required": true,
+                        "type": "string",
+                        "format": "array",
+                        "default": "[\"good-karma\",\"fabien\"]"
+                    }
+                ],
+                "tags": [
+                    "Account"
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Result",
+                        "schema": {
+                            "type": "array",
+                            "items": {
+                                "$ref": "#/definitions/_"
+                            }
+                        }
+                    },
+                    "default": {
+                        "description": "Unexpected error",
+                        "schema": {
+                            "$ref": "#/definitions/Error"
+                        }
+                    }
+                }
+            }
+        },
+        "/lookup_accounts": {
+            "get": {
+                "summary": "lookup_accounts",
+                "description": "lookup_accounts regex search\n",
+                "parameters": [
+                    {
+                        "name": "lowerBoundName",
+                        "in": "query",
+                        "description": "lowerBoundName.",
+                        "required": true,
+                        "type": "string",
+                        "format": "string",
+                        "default": "good-kar"
+                    },
+                    {
+                        "name": "limit",
+                        "in": "query",
+                        "description": "limit.",
+                        "required": true,
+                        "type": "number",
+                        "format": "number",
+                        "default": 10
+                    }
+                ],
+                "tags": [
+                    "Account"
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Result",
+                        "schema": {
+                            "type": "array",
+                            "items": {
+                                "$ref": "#/definitions/_"
+                            }
+                        }
+                    },
+                    "default": {
+                        "description": "Unexpected error",
+                        "schema": {
+                            "$ref": "#/definitions/Error"
+                        }
+                    }
+                }
+            }
+        },
+        "/get_follow_count": {
+            "get": {
+                "summary": "get_follow_count",
+                "description": "get_follow_count\n",
+                "parameters": [
+                    {
+                        "name": "account",
+                        "in": "query",
+                        "description": "account name.",
+                        "required": true,
+                        "type": "string",
+                        "format": "string",
+                        "default": "good-karma"
+                    }
+                ],
+                "tags": [
+                    "Account"
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Result",
+                        "schema": {
+                            "type": "array",
+                            "items": {
+                                "$ref": "#/definitions/_"
+                            }
+                        }
+                    },
+                    "default": {
+                        "description": "Unexpected error",
+                        "schema": {
+                            "$ref": "#/definitions/Error"
+                        }
+                    }
+                }
+            }
+        },
+        "/get_followers": {
+            "get": {
+                "summary": "get_followers",
+                "description": "get_followers\n",
+                "parameters": [
+                    {
+                        "name": "following",
+                        "in": "query",
+                        "description": "account name.",
+                        "required": true,
+                        "type": "string",
+                        "format": "string",
+                        "default": "good-karma"
+                    },
+                    {
+                        "name": "startFollower",
+                        "in": "query",
+                        "description": "account name from followers for pagination.",
+                        "required": true,
+                        "type": "string",
+                        "format": "string",
+                        "default": "fabien"
+                    },
+                    {
+                        "name": "followType",
+                        "in": "query",
+                        "description": "follow type blog, etc.",
+                        "required": true,
+                        "type": "string",
+                        "format": "string",
+                        "default": "blog"
+                    },
+                    {
+                        "name": "limit",
+                        "in": "query",
+                        "description": "size of array for pagination.",
+                        "required": true,
+                        "type": "number",
+                        "format": "number",
+                        "default": 10
+                    }
+                ],
+                "tags": [
+                    "Account"
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Result",
+                        "schema": {
+                            "type": "array",
+                            "items": {
+                                "$ref": "#/definitions/_"
+                            }
+                        }
+                    },
+                    "default": {
+                        "description": "Unexpected error",
+                        "schema": {
+                            "$ref": "#/definitions/Error"
+                        }
+                    }
+                }
+            }
+        },
+        "/get_following": {
+            "get": {
+                "summary": "get_following",
+                "description": "get_following\n",
+                "parameters": [
+                    {
+                        "name": "follower",
+                        "in": "query",
+                        "description": "account name.",
+                        "required": true,
+                        "type": "string",
+                        "format": "string",
+                        "default": "good-karma"
+                    },
+                    {
+                        "name": "startFollowing",
+                        "in": "query",
+                        "description": "account name from followings for pagination.",
+                        "required": true,
+                        "type": "string",
+                        "format": "string",
+                        "default": "fabien"
+                    },
+                    {
+                        "name": "followType",
+                        "in": "query",
+                        "description": "follow type blog, etc.",
+                        "required": true,
+                        "type": "string",
+                        "format": "string",
+                        "default": "blog"
+                    },
+                    {
+                        "name": "limit",
+                        "in": "query",
+                        "description": "size of array for pagination.",
+                        "required": true,
+                        "type": "number",
+                        "format": "number",
+                        "default": 10
+                    }
+                ],
+                "tags": [
+                    "Account"
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Result",
+                        "schema": {
+                            "type": "array",
+                            "items": {
+                                "$ref": "#/definitions/_"
+                            }
+                        }
+                    },
+                    "default": {
+                        "description": "Unexpected error",
+                        "schema": {
+                            "$ref": "#/definitions/Error"
+                        }
+                    }
+                }
+            }
+        },
+        "/get_escrow": {
+            "get": {
+                "summary": "get_escrow",
+                "description": "get_escrow\n",
+                "parameters": [
+                    {
+                        "name": "from",
+                        "in": "query",
+                        "description": "account name.",
+                        "required": true,
+                        "type": "string",
+                        "format": "string",
+                        "default": "good-karma"
+                    },
+                    {
+                        "name": "escrowId",
+                        "in": "query",
+                        "description": "id.",
+                        "required": true,
+                        "type": "integer",
+                        "format": "int32"
+                    }
+                ],
+                "tags": [
+                    "Account"
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Result",
+                        "schema": {
+                            "type": "array",
+                            "items": {
+                                "$ref": "#/definitions/_"
+                            }
+                        }
+                    },
+                    "default": {
+                        "description": "Unexpected error",
+                        "schema": {
+                            "$ref": "#/definitions/Error"
+                        }
+                    }
+                }
+            }
+        },
+        "/get_withdraw_routes": {
+            "get": {
+                "summary": "get_withdraw_routes",
+                "description": "get_withdraw_routes\n",
+                "parameters": [
+                    {
+                        "name": "account",
+                        "in": "query",
+                        "description": "account name.",
+                        "required": true,
+                        "type": "string",
+                        "format": "string",
+                        "default": "clayop"
+                    },
+                    {
+                        "name": "withdrawRouteType",
+                        "in": "query",
+                        "description": "withdrawRouteType.",
+                        "required": false,
+                        "type": "string",
+                        "format": "string"
+                    }
+                ],
+                "tags": [
+                    "Account"
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Result",
+                        "schema": {
+                            "type": "array",
+                            "items": {
+                                "$ref": "#/definitions/_"
+                            }
+                        }
+                    },
+                    "default": {
+                        "description": "Unexpected error",
+                        "schema": {
+                            "$ref": "#/definitions/Error"
+                        }
+                    }
+                }
+            }
+        },
+        "/get_account_bandwidth": {
+            "get": {
+                "summary": "get_account_bandwidth",
+                "description": "get_account_bandwidth\n",
+                "parameters": [
+                    {
+                        "name": "account",
+                        "in": "query",
+                        "description": "account name.",
+                        "required": true,
+                        "type": "string",
+                        "format": "string",
+                        "default": "good-karma"
+                    },
+                    {
+                        "name": "bandwidthType",
+                        "in": "query",
+                        "description": "bandwidthType.",
+                        "required": false,
+                        "type": "string",
+                        "format": "string"
+                    }
+                ],
+                "tags": [
+                    "Account"
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Result",
+                        "schema": {
+                            "type": "array",
+                            "items": {
+                                "$ref": "#/definitions/_"
+                            }
+                        }
+                    },
+                    "default": {
+                        "description": "Unexpected error",
+                        "schema": {
+                            "$ref": "#/definitions/Error"
+                        }
+                    }
+                }
+            }
+        },
+        "/get_savings_withdraw_from": {
+            "get": {
+                "summary": "get_savings_withdraw_from",
+                "description": "get_savings_withdraw_from\n",
+                "parameters": [
+                    {
+                        "name": "account",
+                        "in": "query",
+                        "description": "account name.",
+                        "required": true,
+                        "type": "string",
+                        "format": "string",
+                        "default": "jesta"
+                    }
+                ],
+                "tags": [
+                    "Account"
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Result",
+                        "schema": {
+                            "type": "array",
+                            "items": {
+                                "$ref": "#/definitions/_"
+                            }
+                        }
+                    },
+                    "default": {
+                        "description": "Unexpected error",
+                        "schema": {
+                            "$ref": "#/definitions/Error"
+                        }
+                    }
+                }
+            }
+        },
+        "/get_savings_withdraw_to": {
+            "get": {
+                "summary": "get_savings_withdraw_to",
+                "description": "get_savings_withdraw_to\n",
+                "parameters": [
+                    {
+                        "name": "account",
+                        "in": "query",
+                        "description": "account name.",
+                        "required": true,
+                        "type": "string",
+                        "format": "string",
+                        "default": "jesta"
+                    }
+                ],
+                "tags": [
+                    "Account"
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Result",
+                        "schema": {
+                            "type": "array",
+                            "items": {
+                                "$ref": "#/definitions/_"
+                            }
+                        }
+                    },
+                    "default": {
+                        "description": "Unexpected error",
+                        "schema": {
+                            "$ref": "#/definitions/Error"
+                        }
+                    }
+                }
+            }
+        },
+        "/get_block": {
+            "get": {
+                "summary": "get block",
+                "description": "get block\n",
+                "parameters": [
+                    {
+                        "name": "blockNum",
+                        "in": "query",
+                        "description": "get block content/transactions.",
+                        "required": true,
+                        "type": "integer",
+                        "format": "int32",
+                        "default": 7595656
+                    }
+                ],
+                "tags": [
+                    "Network"
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Result",
+                        "schema": {
+                            "type": "array",
+                            "items": {
+                                "$ref": "#/definitions/_"
+                            }
+                        }
+                    },
+                    "default": {
+                        "description": "Unexpected error",
+                        "schema": {
+                            "$ref": "#/definitions/Error"
+                        }
+                    }
+                }
+            }
+        },
+        "/get_block_header": {
+            "get": {
+                "summary": "get block header",
+                "description": "get block header\n",
+                "parameters": [
+                    {
+                        "name": "blockNum",
+                        "in": "query",
+                        "description": "get block header, witness, timestamp.",
+                        "required": true,
+                        "type": "integer",
+                        "format": "int32",
+                        "default": 7595656
+                    }
+                ],
+                "tags": [
+                    "Network"
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Result",
+                        "schema": {
+                            "type": "array",
+                            "items": {
+                                "$ref": "#/definitions/_"
+                            }
+                        }
+                    },
+                    "default": {
+                        "description": "Unexpected error",
+                        "schema": {
+                            "$ref": "#/definitions/Error"
+                        }
+                    }
+                }
+            }
+        },
+        "/get_ops_in_block": {
+            "get": {
+                "summary": "get_ops_in_block",
+                "description": "get_ops_in_block\n",
+                "parameters": [
+                    {
+                        "name": "blockNum",
+                        "in": "query",
+                        "description": "block number.",
+                        "required": true,
+                        "type": "integer",
+                        "format": "int32",
+                        "default": 8836129
+                    },
+                    {
+                        "name": "onlyVirtual",
+                        "in": "query",
+                        "description": "onlyVirtual.",
+                        "required": true,
+                        "type": "boolean",
+                        "format": "bool",
+                        "default": false
+                    }
+                ],
+                "tags": [
+                    "Network"
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Result",
+                        "schema": {
+                            "type": "array",
+                            "items": {
+                                "$ref": "#/definitions/_"
+                            }
+                        }
+                    },
+                    "default": {
+                        "description": "Unexpected error",
+                        "schema": {
+                            "$ref": "#/definitions/Error"
+                        }
+                    }
+                }
+            }
+        },
+        "/get_transaction_hex": {
+            "get": {
+                "summary": "get_transaction_hex",
+                "description": "get_transaction_hex\n",
+                "parameters": [
+                    {
+                        "name": "trx",
+                        "in": "query",
+                        "description": "transaction hex.",
+                        "required": true,
+                        "type": "string",
+                        "format": "string"
+                    }
+                ],
+                "tags": [
+                    "Network"
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Result",
+                        "schema": {
+                            "type": "array",
+                            "items": {
+                                "$ref": "#/definitions/_"
+                            }
+                        }
+                    },
+                    "default": {
+                        "description": "Unexpected error",
+                        "schema": {
+                            "$ref": "#/definitions/Error"
+                        }
+                    }
+                }
+            }
+        },
+        "/get_transaction": {
+            "get": {
+                "summary": "get_transaction",
+                "description": "get_transaction\n",
+                "parameters": [
+                    {
+                        "name": "trxId",
+                        "in": "query",
+                        "description": "transaction id.",
+                        "required": true,
+                        "type": "string",
+                        "format": "string",
+                        "default": "b86745936b1e471c0efb78d0f80bd331f984d11f"
+                    }
+                ],
+                "tags": [
+                    "Network"
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Result",
+                        "schema": {
+                            "type": "array",
+                            "items": {
+                                "$ref": "#/definitions/_"
+                            }
+                        }
+                    },
+                    "default": {
+                        "description": "Unexpected error",
+                        "schema": {
+                            "$ref": "#/definitions/Error"
+                        }
+                    }
+                }
+            }
+        },
+        "/get_required_signatures": {
+            "get": {
+                "summary": "get_required_signatures",
+                "description": "get_required_signatures\n",
+                "parameters": [
+                    {
+                        "name": "trx",
+                        "in": "query",
+                        "description": "transaction.",
+                        "required": true,
+                        "type": "string",
+                        "format": "string"
+                    },
+                    {
+                        "name": "availableKeys",
+                        "in": "query",
+                        "description": "availableKeys.",
+                        "required": true,
+                        "type": "string",
+                        "format": "string"
+                    }
+                ],
+                "tags": [
+                    "Network"
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Result",
+                        "schema": {
+                            "type": "array",
+                            "items": {
+                                "$ref": "#/definitions/_"
+                            }
+                        }
+                    },
+                    "default": {
+                        "description": "Unexpected error",
+                        "schema": {
+                            "$ref": "#/definitions/Error"
+                        }
+                    }
+                }
+            }
+        },
+        "/get_potential_signatures": {
+            "get": {
+                "summary": "get_potential_signatures",
+                "description": "get_potential_signatures\n",
+                "parameters": [
+                    {
+                        "name": "trx",
+                        "in": "query",
+                        "description": "transaction.",
+                        "required": true,
+                        "type": "string",
+                        "format": "string"
+                    }
+                ],
+                "tags": [
+                    "Network"
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Result",
+                        "schema": {
+                            "type": "array",
+                            "items": {
+                                "$ref": "#/definitions/_"
+                            }
+                        }
+                    },
+                    "default": {
+                        "description": "Unexpected error",
+                        "schema": {
+                            "$ref": "#/definitions/Error"
+                        }
+                    }
+                }
+            }
+        },
+        "/verify_authority": {
+            "get": {
+                "summary": "verify_authority",
+                "description": "verify_authority\n",
+                "parameters": [
+                    {
+                        "name": "trx",
+                        "in": "query",
+                        "description": "transaction.",
+                        "required": true,
+                        "type": "string",
+                        "format": "string"
+                    }
+                ],
+                "tags": [
+                    "Network"
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Result",
+                        "schema": {
+                            "type": "array",
+                            "items": {
+                                "$ref": "#/definitions/_"
+                            }
+                        }
+                    },
+                    "default": {
+                        "description": "Unexpected error",
+                        "schema": {
+                            "$ref": "#/definitions/Error"
+                        }
+                    }
+                }
+            }
+        },
+        "/verify_account_authority": {
+            "get": {
+                "summary": "verify_account_authority",
+                "description": "verify_account_authority\n",
+                "parameters": [
+                    {
+                        "name": "nameOrId",
+                        "in": "query",
+                        "description": "nameOrId.",
+                        "required": true,
+                        "type": "string",
+                        "format": "string"
+                    },
+                    {
+                        "name": "signers",
+                        "in": "query",
+                        "description": "signers.",
+                        "required": true,
+                        "type": "string",
+                        "format": "string"
+                    }
+                ],
+                "tags": [
+                    "Network"
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Result",
+                        "schema": {
+                            "type": "array",
+                            "items": {
+                                "$ref": "#/definitions/_"
+                            }
+                        }
+                    },
+                    "default": {
+                        "description": "Unexpected error",
+                        "schema": {
+                            "$ref": "#/definitions/Error"
+                        }
+                    }
+                }
+            }
+        },
+        "/get_key_references": {
+            "get": {
+                "summary": "get_key_references",
+                "description": "get_key_references\n",
+                "parameters": [
+                    {
+                        "name": "key",
+                        "in": "query",
+                        "description": "key.",
+                        "required": true,
+                        "type": "string",
+                        "format": "string",
+                        "default": ""
+                    }
+                ],
+                "tags": [
+                    "Network"
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Result",
+                        "schema": {
+                            "type": "array",
+                            "items": {
+                                "$ref": "#/definitions/_"
+                            }
+                        }
+                    },
+                    "default": {
+                        "description": "Unexpected error",
+                        "schema": {
+                            "$ref": "#/definitions/Error"
+                        }
+                    }
+                }
+            }
+        },
+        "/broadcast_transaction": {
+            "get": {
+                "summary": "broadcast_transaction",
+                "description": "broadcast_transaction\n",
+                "parameters": [
+                    {
+                        "name": "trx",
+                        "in": "query",
+                        "description": "transaction.",
+                        "required": true,
+                        "type": "string",
+                        "format": "string"
+                    }
+                ],
+                "tags": [
+                    "Network"
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Result",
+                        "schema": {
+                            "type": "array",
+                            "items": {
+                                "$ref": "#/definitions/_"
+                            }
+                        }
+                    },
+                    "default": {
+                        "description": "Unexpected error",
+                        "schema": {
+                            "$ref": "#/definitions/Error"
+                        }
+                    }
+                }
+            }
+        },
+        "/broadcast_transaction_synchronous": {
+            "get": {
+                "summary": "broadcast_transaction_synchronous",
+                "description": "broadcast_transaction_synchronous\n",
+                "parameters": [
+                    {
+                        "name": "trx",
+                        "in": "query",
+                        "description": "transaction.",
+                        "required": true,
+                        "type": "string",
+                        "format": "string"
+                    }
+                ],
+                "tags": [
+                    "Network"
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Result",
+                        "schema": {
+                            "type": "array",
+                            "items": {
+                                "$ref": "#/definitions/_"
+                            }
+                        }
+                    },
+                    "default": {
+                        "description": "Unexpected error",
+                        "schema": {
+                            "$ref": "#/definitions/Error"
+                        }
+                    }
+                }
+            }
+        },
+        "/broadcast_block": {
+            "get": {
+                "summary": "broadcast_block",
+                "description": "broadcast_block\n",
+                "parameters": [
+                    {
+                        "name": "b",
+                        "in": "query",
+                        "description": "block.",
+                        "required": true,
+                        "type": "string",
+                        "format": "string"
+                    }
+                ],
+                "tags": [
+                    "Network"
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Result",
+                        "schema": {
+                            "type": "array",
+                            "items": {
+                                "$ref": "#/definitions/_"
+                            }
+                        }
+                    },
+                    "default": {
+                        "description": "Unexpected error",
+                        "schema": {
+                            "$ref": "#/definitions/Error"
+                        }
+                    }
+                }
+            }
+        },
+        "/broadcast_transaction_with_callback": {
+            "get": {
+                "summary": "WARNING: can only be used in Steem node or in scripts broadcast_transaction_with_callback\n",
+                "description": "broadcast_transaction_with_callback\n",
+                "parameters": [
+                    {
+                        "name": "confirmationCallback",
+                        "in": "query",
+                        "description": "confirmationCallback function.",
+                        "type": "string",
+                        "format": "string"
+                    },
+                    {
+                        "name": "trx",
+                        "in": "query",
+                        "description": "transaction.",
+                        "type": "string",
+                        "format": "string"
+                    }
+                ],
+                "tags": [
+                    "Network"
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Result",
+                        "schema": {
+                            "type": "array",
+                            "items": {
+                                "$ref": "#/definitions/_"
+                            }
+                        }
+                    },
+                    "default": {
+                        "description": "Unexpected error",
+                        "schema": {
+                            "$ref": "#/definitions/Error"
+                        }
+                    }
+                }
+            }
+        },
+        "/set_max_block_age": {
+            "get": {
+                "summary": "WARNING: can only be used in Steem node or in scripts set_max_block_age\n",
+                "description": "set_max_block_age\n",
+                "parameters": [
+                    {
+                        "name": "maxBlockAge",
+                        "in": "query",
+                        "description": "maxBlockAge.",
+                        "required": true,
+                        "type": "integer",
+                        "format": "int32"
+                    }
+                ],
+                "tags": [
+                    "Network"
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Result",
+                        "schema": {
+                            "type": "array",
+                            "items": {
+                                "$ref": "#/definitions/_"
+                            }
+                        }
+                    },
+                    "default": {
+                        "description": "Unexpected error",
+                        "schema": {
+                            "$ref": "#/definitions/Error"
+                        }
+                    }
+                }
+            }
+        },
+        "/set_subscribe_callback": {
+            "get": {
+                "summary": "WARNING: can only be used in Steem node or in scripts set_subscribe_callback\n",
+                "description": "set_subscribe_callback \n",
+                "parameters": [
+                    {
+                        "name": "callback",
+                        "in": "query",
+                        "description": "callback function.",
+                        "type": "string",
+                        "format": "string"
+                    },
+                    {
+                        "name": "clearFilter",
+                        "in": "query",
+                        "description": "clearFilter.",
+                        "type": "string",
+                        "format": "string"
+                    }
+                ],
+                "tags": [
+                    "Network"
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Result",
+                        "schema": {
+                            "type": "array",
+                            "items": {
+                                "$ref": "#/definitions/_"
+                            }
+                        }
+                    },
+                    "default": {
+                        "description": "Unexpected error",
+                        "schema": {
+                            "$ref": "#/definitions/Error"
+                        }
+                    }
+                }
+            }
+        },
+        "/set_pending_transaction_callback": {
+            "get": {
+                "summary": "WARNING: can only be used in Steem node or in scripts set_pending_transaction_callback\n",
+                "description": "set_pending_transaction_callback \n",
+                "parameters": [
+                    {
+                        "name": "cb",
+                        "in": "query",
+                        "description": "callback function.",
+                        "type": "string",
+                        "format": "string"
+                    }
+                ],
+                "tags": [
+                    "Network"
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Result",
+                        "schema": {
+                            "type": "array",
+                            "items": {
+                                "$ref": "#/definitions/_"
+                            }
+                        }
+                    },
+                    "default": {
+                        "description": "Unexpected error",
+                        "schema": {
+                            "$ref": "#/definitions/Error"
+                        }
+                    }
+                }
+            }
+        },
+        "/set_block_applied_callback": {
+            "get": {
+                "summary": "WARNING: can only be used in Steem node or in scripts set_block_applied_callback\n",
+                "description": "set_block_applied_callback \n",
+                "parameters": [
+                    {
+                        "name": "cb",
+                        "in": "query",
+                        "description": "callback function.",
+                        "type": "string",
+                        "format": "string"
+                    }
+                ],
+                "tags": [
+                    "Network"
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Result",
+                        "schema": {
+                            "type": "array",
+                            "items": {
+                                "$ref": "#/definitions/_"
+                            }
+                        }
+                    },
+                    "default": {
+                        "description": "Unexpected error",
+                        "schema": {
+                            "$ref": "#/definitions/Error"
+                        }
+                    }
+                }
+            }
+        },
+        "/cancel_all_subscriptions": {
+            "get": {
+                "summary": "WARNING: can only be used in Steem node or in scripts cancel_all_subscriptions\n",
+                "description": "cancel_all_subscriptions \n",
+                "tags": [
+                    "Network"
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Result",
+                        "schema": {
+                            "type": "array",
+                            "items": {
+                                "$ref": "#/definitions/_"
+                            }
+                        }
+                    },
+                    "default": {
+                        "description": "Unexpected error",
+                        "schema": {
+                            "$ref": "#/definitions/Error"
+                        }
+                    }
+                }
+            }
+        },
+        "/get_api_by_name": {
+            "get": {
+                "summary": "get_api_by_name",
+                "description": "get_api_by_name\n",
+                "parameters": [
+                    {
+                        "name": "apiName",
+                        "in": "query",
+                        "description": "apiName.",
+                        "required": true,
+                        "type": "string",
+                        "format": "string"
+                    }
+                ],
+                "tags": [
+                    "Network"
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Result",
+                        "schema": {
+                            "type": "array",
+                            "items": {
+                                "$ref": "#/definitions/_"
+                            }
+                        }
+                    },
+                    "default": {
+                        "description": "Unexpected error",
+                        "schema": {
+                            "$ref": "#/definitions/Error"
+                        }
+                    }
+                }
+            }
+        },
+        "/swagger": {
+            "x-swagger-pipe": "swagger_raw"
+        }
+    },
+    "definitions": {
+        "_": {
+            "type": "object",
+            "description": "describe output object json and properties",
+            "properties": {
+                "item1": {
+                    "type": "string",
+                    "description": "description of item1"
+                }
+            }
+        },
+        "Accounts": {
+            "type": "object",
+            "properties": {
+                "name": {
+                    "type": "string",
+                    "description": "Account name"
+                },
+                "description": {
+                    "type": "string",
+                    "description": "Description of product."
+                },
+                "json_metadata": {
+                    "type": "string",
+                    "description": "Json data of account"
+                },
+                "created": {
+                    "type": "string",
+                    "description": "Account created date and time."
+                },
+                "reputation": {
+                    "type": "string",
+                    "description": "Account reputation."
+                }
+            }
+        },
+        "Error": {
+            "type": "object",
+            "properties": {
+                "code": {
+                    "type": "integer",
+                    "format": "int32"
+                },
+                "message": {
+                    "type": "string"
+                }
+            }
+        }
+    }
+}

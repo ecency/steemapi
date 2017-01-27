@@ -1,0 +1,5 @@
+node_modules
+src/main/javascript/doc.js
+docs
+lib
+.log

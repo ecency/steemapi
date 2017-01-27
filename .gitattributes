@@ -1,0 +1,15 @@
+* text eol=lf
+src/**/*.ttf binary
+docs/**/*.js binary
+docs/**/*.ttf binary
+docs/**/*.map binary
+docs/**/*.eot binary
+docs/**/*.svg binary
+docs/**/*.ttf binary
+docs/**/*.woff binary
+docs/**/*.woff2 binary
+docs/**/*.png binary
+docs/*.html text
+
+src/main/html/fonts/*.ttf binary
+src/main/html/images/*.png binary

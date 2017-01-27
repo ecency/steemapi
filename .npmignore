@@ -1,0 +1,9 @@
+*.sublime-*
+example.html
+*.tgz
+.classpath
+.project
+.npmignore
+docs/sample.html
+docs/spec.js
+node_modules

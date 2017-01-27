@@ -1,0 +1,25 @@
+{
+  "name": "esteemapp/steemapi",
+  "description": "SteemAPI UI is a dependency-free collection of HTML, JavaScript, and CSS assets that dynamically generate beautiful documentation from a Swagger and Steem-compliant API",
+  "keywords": [
+    "Steem",
+    "Swagger",
+    "OpenAPI",
+    "specification",
+    "documentation",
+    "API",
+    "UI"
+  ],
+  "homepage": "http://esteem.ws",
+  "license": "Apache-2.0",
+  "authors": [
+    {
+      "name": "Feruz M",
+      "email": "info@esteem.ws"
+    },
+    {
+      "name": "Fabien",
+      "email": "fabien@busy.org"
+    }
+  ]
+}
