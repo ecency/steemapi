@@ -498,6 +498,79 @@
                 }
             }
         },
+        "/witness_update": {
+            "get": {
+                "summary": "witness_update",
+                "description": "witness_update\n",
+                "parameters": [
+                    {
+                        "name": "owner",
+                        "in": "query",
+                        "description": "witness name",
+                        "required": true,
+                        "type": "string",
+                        "format": "string",
+                        "default": "good-karma"
+                    },
+                    {
+                        "name": "url",
+                        "in": "query",
+                        "description": "url.",
+                        "required": true,
+                        "type": "string",
+                        "format": "string",
+                        "default": "https://steemit.com/created/good-karma"
+                    },
+                    {
+                        "name": "block_signing_key",
+                        "in": "query",
+                        "description": "block_signing_key.",
+                        "required": true,
+                        "type": "string",
+                        "format": "string",
+                        "default": "STM...."
+                    },
+                    {
+                        "name": "fee",
+                        "in": "query",
+                        "description": "fee.",
+                        "required": true,
+                        "type": "string",
+                        "format": "string",
+                        "default": "0.000"
+                    },
+                    {
+                        "name": "props",
+                        "in": "query",
+                        "description": "props.",
+                        "required": true,
+                        "type": "string",
+                        "format": "string",
+                        "default": "{\"account_creation_fee\":\"20.000 STEEM\",\"maximum_block_size\":65536,\"sbd_interest_rate\":100}"
+                    }
+                ],
+                "tags": [
+                    "Witness"
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Result",
+                        "schema": {
+                            "type": "array",
+                            "items": {
+                                "$ref": "#/definitions/_"
+                            }
+                        }
+                    },
+                    "default": {
+                        "description": "Unexpected error",
+                        "schema": {
+                            "$ref": "#/definitions/Error"
+                        }
+                    }
+                }
+            }
+        },
         "/get_miner_queue": {
             "get": {
                 "summary": "get_miner_queue",
