@@ -10,11 +10,10 @@
             "url": "http://www.apache.org/licenses/LICENSE-2.0.html"
         }
     },
-    "host": "https://api.steemjs.com",
+    "host": "api.steemjs.com",
     "basePath": "/",
     "schemes": [
-        "https",
-        "http"
+        "https"
     ],
     "consumes": [
         "application/json"
