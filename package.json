@@ -1,6 +1,6 @@
 {
   "name": "steemapi-ui",
-  "author": "Feruz M <info@esteem.ws>",
+  "author": "Feruz M <info@esteem.app>",
   "contributors": [
     {
       "name": "Fabien",
@@ -8,8 +8,8 @@
     }
   ],
   "description": "SteemAPI UI is a dependency-free collection of HTML, JavaScript, and CSS assets that dynamically generate beautiful documentation from a Swagger and Steem-compliant API",
-  "version": "1.0.0",
-  "homepage": "http://esteem.ws",
+  "version": "1.0.1",
+  "homepage": "https://esteem.app",
   "license": "Apache-2.0",
   "main": "docs/swagger-ui.js",
   "scripts": {
@@ -47,9 +47,9 @@
     "gulp-sourcemaps": "^2.2.0",
     "gulp-uglify": "^1.1.0",
     "gulp-watch": "^4.1.1",
-    "gulp-wrap": "^0.11.0",
+    "gulp-wrap": "^0.15.0",
     "handlebars": "^4.0.5",
-    "http-server": "^0.8.0",
+    "http-server": "^0.11.1",
     "jshint-stylish": "^1.0.1",
     "karma": "0.13.19",
     "karma-chai": "0.1.0",
@@ -59,7 +59,7 @@
     "karma-sinon-chai": "1.1.0",
     "less": "^2.4.0",
     "mocha": "^2.1.0",
-    "phantomjs": "1.9.19",
+    "phantomjs": "^1.9.20",
     "run-sequence": "^1.2.2",
     "selenium-webdriver": "^2.45.0",
     "sinon-chai": "2.8.0",

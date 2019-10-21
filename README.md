@@ -1,6 +1,6 @@
 # Interactive SteemAPI
 
-Steem Interactive API explorer, brought to you by eSteem and Busy, built on top of [steemjs](https://github.com/adcpm/steem). Gives users and developers quickly get started with their development of applications on top of Steem.
+Steem Interactive API explorer, brought to you by eSteem, built on top of [steemjs](https://github.com/steemit/steem-js). Gives users and developers quickly get started with their development of applications on top of Steem.
 
 ## How to Use It
 
@@ -27,6 +27,3 @@ Create your own fork of [esteemapp/steemapi](https://github.com/esteemapp/steema
 To share your changes, [submit a pull request](https://github.com/esteemapp/steemapi/pull/new/master).
 
 
----
-<img src="http://esteem.ws/files/logo.png" width="200" alt="eSteem" />
-<img src="https://busy.org/img/logo.svg" width="200" alt="Busy" />
