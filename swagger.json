@@ -20,6 +20,7 @@
       "get" : {
         "summary" : "get version of Steem",
         "description" : "Returns version information of connected Steem node/websocket.\n",
+        "tags" : [ "Condenser Api" ],
         "responses" : {
           "200" : {
             "description" : "Result",
@@ -33,8 +34,7 @@
               "$ref" : "#/definitions/Error"
             }
           }
-        },
-        "tags" : [ "Condenser Api" ]
+        }
       }
     },
     "/get_volume" : {
@@ -113,6 +113,7 @@
       "get" : {
         "summary" : "number of accounts",
         "description" : "Get Number of Accounts from Steem\n",
+        "tags" : [ "Condenser Api" ],
         "responses" : {
           "200" : {
             "description" : "Result",
@@ -129,8 +130,8 @@
               "$ref" : "#/definitions/Error"
             }
           }
-        },
-        "tags" : [ "Condenser Api" ]
+        }
+
       }
     },
     "/get_chain_properties" : {
@@ -200,6 +201,7 @@
       "get" : {
         "summary" : "get config",
         "description" : "get config\n",
+        "tags" : [ "Condenser Api" ],
         "responses" : {
           "200" : {
             "description" : "Result",
@@ -216,14 +218,14 @@
               "$ref" : "#/definitions/Error"
             }
           }
-        },
-        "tags" : [ "Condenser Api" ]
+        }
       }
     },
     "/get_dynamic_global_properties" : {
       "get" : {
         "summary" : "get_dynamic_global_properties",
         "description" : "get_dynamic_global_properties\n",
+        "tags" : [ "Condenser Api" ],
         "responses" : {
           "200" : {
             "description" : "Result",
@@ -240,8 +242,7 @@
               "$ref" : "#/definitions/Error"
             }
           }
-        },
-        "tags" : [ "Condenser Api" ]
+        }
       }
     },
     "/get_feed" : {
@@ -370,6 +371,7 @@
       "get" : {
         "summary" : "get_current_median_history_price",
         "description" : "get_current_median_history_price\n",
+        "tags" : [ "Condenser Api" ],
         "responses" : {
           "200" : {
             "description" : "Result",
@@ -386,8 +388,7 @@
               "$ref" : "#/definitions/Error"
             }
           }
-        },
-        "tags" : [ "Condenser Api" ]
+        }
       }
     },
     "/get_hardfork_version" : {
@@ -894,6 +895,7 @@
           "format" : "int32",
           "default" : 10
         } ],
+        "tags" : [ "Market History Api" ],
         "responses" : {
           "200" : {
             "description" : "Result",
@@ -910,8 +912,7 @@
               "$ref" : "#/definitions/Error"
             }
           }
-        },
-        "tags" : [ "Market History Api" ]
+        }
       }
     },
     "/get_open_orders" : {
@@ -919,7 +920,7 @@
         "summary" : "get_open_orders",
         "description" : "get_open_orders\n",
         "parameters" : [ {
-          "name" : "owner",
+          "name" : "owner"
           "in" : "query",
           "description" : "account name.",
           "required" : true,
@@ -927,6 +928,7 @@
           "format" : "string",
           "default" : "good-karma"
         } ],
+        "tags" : [ "Market History Api", "Condenser Api" ],
         "responses" : {
           "200" : {
             "description" : "Result",
@@ -943,8 +945,7 @@
               "$ref" : "#/definitions/Error"
             }
           }
-        },
-        "tags" : [ "Market History Api", "Condenser Api" ]
+        }
       }
     },
     "/get_order_book" : {
@@ -960,6 +961,7 @@
           "format" : "int32",
           "default" : 10
         } ],
+        "tags" : [ "Market History Api", "Condenser Api" ],
         "responses" : {
           "200" : {
             "description" : "Result",
@@ -976,8 +978,7 @@
               "$ref" : "#/definitions/Error"
             }
           }
-        },
-        "tags" : [ "Market History Api", "Condenser Api" ]
+        }
       }
     },
     "/get_active_categories" : {
@@ -1187,6 +1188,7 @@
       "get" : {
         "summary" : "get ticker",
         "description" : "Returns the market ticker for the internal SBD:STEEM market.\n",
+        "tags" : [ "Market History Api", "Condenser Api" ],
         "responses" : {
           "200" : {
             "description" : "Result",
@@ -1203,8 +1205,7 @@
               "$ref" : "#/definitions/Error"
             }
           }
-        },
-        "tags" : [ "Market History Api", "Condenser Api" ]
+        }
       }
     },
     "/get_trending_categories" : {
@@ -1269,6 +1270,7 @@
           "format" : "int",
           "default" : 10
         } ],
+        "tags" : [ "Condenser Api" ],
         "responses" : {
           "200" : {
             "description" : "An array of products",
@@ -1285,8 +1287,7 @@
               "$ref" : "#/definitions/Error"
             }
           }
-        },
-        "tags" : [ "Condenser Api" ]
+        }
       }
     },
     "/get_active_votes" : {
@@ -1310,6 +1311,7 @@
           "format" : "string",
           "default" : "test"
         } ],
+        "tags" : [ "Tags Api", "Condenser Api" ],
         "responses" : {
           "200" : {
             "description" : "Result",
@@ -1326,8 +1328,7 @@
               "$ref" : "#/definitions/Error"
             }
           }
-        },
-        "tags" : [ "Tags Api", "Condenser Api" ]
+        }
       }
     },
     "/get_content" : {
@@ -1392,6 +1393,7 @@
           "format" : "string",
           "default" : "test"
         } ],
+        "tags" : [ "Tags Api" ],
         "responses" : {
           "200" : {
             "description" : "Result",
@@ -1408,8 +1410,7 @@
               "$ref" : "#/definitions/Error"
             }
           }
-        },
-        "tags" : [ "Tags Api" ]
+        }
       }
     },
     "/get_discussions_by_trending" : {
@@ -1425,6 +1426,7 @@
           "format" : "string",
           "default" : "{\"tag\":\"steem\", \"limit\": \"10\"}"
         } ],
+        "tags" : [ "Tags Api", "Condenser Api" ],
         "responses" : {
           "200" : {
             "description" : "Result",
@@ -1441,12 +1443,12 @@
               "$ref" : "#/definitions/Error"
             }
           }
-        },
-        "tags" : [ "Tags Api", "Condenser Api" ]
+        }
       }
     },
     "/get_discussions_by_trending30" : {
       "get" : {
+
         "summary" : "get discussions by trending 30",
         "description" : "get discussions, | query example {\"limit\":\"10\", \"tag\":\"steem\"} OR {\"start_author\":\"author\", \"permlink\":\"permlink\"} for pagination\n",
         "parameters" : [ {
@@ -1458,6 +1460,7 @@
           "format" : "string",
           "default" : "{\"tag\":\"steem\", \"limit\": \"10\"}"
         } ],
+        "tags" : [ "Tags Api" ],
         "responses" : {
           "200" : {
             "description" : "Result",
@@ -1474,8 +1477,7 @@
               "$ref" : "#/definitions/Error"
             }
           }
-        },
-        "tags" : [ "Tags Api" ]
+        }
       }
     },
     "/get_discussions_by_created" : {
@@ -1491,6 +1493,7 @@
           "format" : "string",
           "default" : "{\"tag\":\"steem\", \"limit\": \"10\"}"
         } ],
+        "tags" : [ "Tags Api", "Condenser Api" ],
         "responses" : {
           "200" : {
             "description" : "Result",
@@ -1507,8 +1510,8 @@
               "$ref" : "#/definitions/Error"
             }
           }
-        },
-        "tags" : [ "Tags Api", "Condenser Api" ]
+
+        }
       }
     },
     "/get_discussions_by_active" : {
@@ -1524,6 +1527,7 @@
           "format" : "string",
           "default" : "{\"tag\":\"steem\", \"limit\": \"10\"}"
         } ],
+        "tags" : [ "Tags Api" ],
         "responses" : {
           "200" : {
             "description" : "Result",
@@ -1540,8 +1544,7 @@
               "$ref" : "#/definitions/Error"
             }
           }
-        },
-        "tags" : [ "Tags Api" ]
+        }
       }
     },
     "/get_discussions_by_promoted" : {
@@ -1557,6 +1560,7 @@
           "format" : "string",
           "default" : "{\"tag\":\"steem\", \"limit\": \"10\"}"
         } ],
+        "tags" : [ "Tags Api", "Condenser Api" ],
         "responses" : {
           "200" : {
             "description" : "Result",
@@ -1573,8 +1577,7 @@
               "$ref" : "#/definitions/Error"
             }
           }
-        },
-        "tags" : [ "Tags Api", "Condenser Api" ]
+        }
       }
     },
     "/get_discussions_by_cashout" : {
@@ -1590,6 +1593,7 @@
           "format" : "string",
           "default" : "{\"tag\":\"steem\", \"limit\": \"10\"}"
         } ],
+        "tags" : [ "Tags Api", "Condenser Api" ],
         "responses" : {
           "200" : {
             "description" : "Result",
@@ -1606,8 +1610,7 @@
               "$ref" : "#/definitions/Error"
             }
           }
-        },
-        "tags" : [ "Tags Api", "Condenser Api" ]
+        }
       }
     },
     "/get_post_discussions_by_payout" : {
