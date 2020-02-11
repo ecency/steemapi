@@ -1,9 +1,9 @@
 {
   "swagger" : "2.0",
   "info" : {
-    "version" : "1.0.1",
+    "version" : "1.0.2",
     "title" : "Interactive Steem API",
-    "description" : "Interactive Steem API. This UI lets you interact with Steem Blockchain and build a request/query, get output. By seeing examples of real live output, you will have ideas on how to start implementing new apps! \n APIs have default parameters to get you started. API list is compiled from [Steem Github](https://github.com/steemit/steem). If you want to contribute documenting detail of properties and output, make a PR to [Github](https://github.com/esteemapp/steemapi) or contact [@good-karma](https://steem.chat/direct/good-karma). You can also check full list here [Steem-js](https://github.com/steemit/steem-js/tree/master/doc) and [DevPortal](https://developers.steem.io/apidefinitions/#apidefinitions-condenser-api).",
+    "description" : "Check Steem Blockchain API calls right inside your browser and form a query, get result from live network, plan your next application or script accordingly.\n\n By seeing examples of real blockchain data, developers can have ideas on how to start implementing new apps!\n\n APIs have default parameters and compiled from [Steem Github](https://github.com/steemit/steem). If you want to contribute documenting detail of properties and output, feel free to make a Pull Request to [Github](https://github.com/esteemapp/steemapi) or contact [@good-karma](https://steem.chat/direct/good-karma).\n\n\n More resources to learn about Steem blockchain and its API: [Steem-js](https://github.com/steemit/steem-js/tree/master/doc) and [DevPortal](https://developers.steem.io/).",
     "termsOfService" : "",
     "license" : {
       "name" : "Apache 2.0",
