@@ -20,7 +20,7 @@
       "get" : {
         "summary" : "get version of Steem",
         "description" : "Returns version information of connected Steem node/websocket.\n",
-        "tags" : [ "Chain" ],
+        "tags" : [ "Condenser Api" ],
         "responses" : {
           "200" : {
             "description" : "Result",
@@ -41,7 +41,7 @@
       "get" : {
         "summary" : "get volume marketing history",
         "description" : "Returns the market volume for the past 24 hours.\n",
-        "tags" : [ "Market" ],
+        "tags" : [ "Market History Api", "Condenser Api" ],
         "responses" : {
           "200" : {
             "description" : "Result",
@@ -89,7 +89,7 @@
           "format" : "number",
           "default" : 10
         } ],
-        "tags" : [ "Condenser" ],
+        "tags" : [ "Condenser Api" ],
         "responses" : {
           "200" : {
             "description" : "Result",
@@ -113,7 +113,7 @@
       "get" : {
         "summary" : "number of accounts",
         "description" : "Get Number of Accounts from Steem\n",
-        "tags" : [ "Chain" ],
+        "tags" : [ "Condenser Api" ],
         "responses" : {
           "200" : {
             "description" : "Result",
@@ -131,13 +131,53 @@
             }
           }
         }
+
       }
     },
     "/get_chain_properties" : {
       "get" : {
         "summary" : "get chain properties",
         "description" : "get chain properties\n",
-        "tags" : [ "Chain" ],
+        "responses" : {
+          "200" : {
+            "description" : "Result",
+            "schema" : {
+              "type" : "array",
+              "items" : {
+                "$ref" : "#/definitions/_"
+              }
+            }
+          },
+          "default" : {
+            "description" : "Unexpected error",
+            "schema" : {
+              "$ref" : "#/definitions/Error"
+            }
+          }
+        },
+        "tags" : [ "Condenser Api" ]
+      }
+    },
+    "/get_community" : {
+      "get" : {
+        "summary" : "get community",
+        "description" : "get community\n",
+        "parameters" : [ {
+          "name" : "name",
+          "in" : "query",
+          "required" : true,
+          "type" : "string",
+          "format" : "string",
+          "default" : "hive-123456789"
+        }, {
+          "name" : "observer",
+          "in" : "query",
+          "required" : true,
+          "type" : "string",
+          "format" : "string",
+          "default" : "alice"
+        } ],
+        "tags" : [ "Bridge" ],
         "responses" : {
           "200" : {
             "description" : "Result",
@@ -161,7 +201,7 @@
       "get" : {
         "summary" : "get config",
         "description" : "get config\n",
-        "tags" : [ "Chain" ],
+        "tags" : [ "Condenser Api" ],
         "responses" : {
           "200" : {
             "description" : "Result",
@@ -185,7 +225,7 @@
       "get" : {
         "summary" : "get_dynamic_global_properties",
         "description" : "get_dynamic_global_properties\n",
-        "tags" : [ "Chain" ],
+        "tags" : [ "Condenser Api" ],
         "responses" : {
           "200" : {
             "description" : "Result",
@@ -234,7 +274,7 @@
           "format" : "number",
           "default" : 10
         } ],
-        "tags" : [ "Condenser Api" ],
+        "tags" : [ "Condenser Api", "Follow Api" ],
         "responses" : {
           "200" : {
             "description" : "Result",
@@ -283,7 +323,7 @@
           "format" : "number",
           "default" : 10
         } ],
-        "tags" : [ "Condenser" ],
+        "tags" : [ "Condenser Api", "Follow Api" ],
         "responses" : {
           "200" : {
             "description" : "Result",
@@ -307,7 +347,7 @@
       "get" : {
         "summary" : "get_feed_history",
         "description" : "Returns the history of price feed values.\n",
-        "tags" : [ "Condenser" ],
+        "tags" : [ "Condenser Api" ],
         "responses" : {
           "200" : {
             "description" : "Result",
@@ -331,7 +371,7 @@
       "get" : {
         "summary" : "get_current_median_history_price",
         "description" : "get_current_median_history_price\n",
-        "tags" : [ "Chain" ],
+        "tags" : [ "Condenser Api" ],
         "responses" : {
           "200" : {
             "description" : "Result",
@@ -355,7 +395,7 @@
       "get" : {
         "summary" : "get_hardfork_version",
         "description" : "get_hardfork_version\n",
-        "tags" : [ "Chain" ],
+        "tags" : [ "Condenser Api" ],
         "responses" : {
           "200" : {
             "description" : "Result",
@@ -379,7 +419,7 @@
       "get" : {
         "summary" : "get_next_scheduled_hardfork",
         "description" : "get_next_scheduled_hardfork\n",
-        "tags" : [ "Chain" ],
+        "tags" : [ "Condenser Api" ],
         "responses" : {
           "200" : {
             "description" : "Result",
@@ -403,7 +443,7 @@
       "get" : {
         "summary" : "get_witness_count",
         "description" : "get_witness_count\n",
-        "tags" : [ "Witness" ],
+        "tags" : [ "Witness Api", "Condenser Api" ],
         "responses" : {
           "200" : {
             "description" : "Result",
@@ -444,7 +484,7 @@
           "format" : "number",
           "default" : 10
         } ],
-        "tags" : [ "Witness" ],
+        "tags" : [ "Witness Api" ],
         "responses" : {
           "200" : {
             "description" : "Result",
@@ -468,7 +508,7 @@
       "get" : {
         "summary" : "get_witness_schedule",
         "description" : "get_witness_schedule\n",
-        "tags" : [ "Witness" ],
+        "tags" : [ "Witness Api", "Condenser Api" ],
         "responses" : {
           "200" : {
             "description" : "Result",
@@ -501,7 +541,7 @@
           "format" : "string",
           "default" : "[\"231\",\"12286\"]"
         } ],
-        "tags" : [ "Witness" ],
+        "tags" : [ "Witness Api", "Condenser Api" ],
         "responses" : {
           "200" : {
             "description" : "Result",
@@ -534,7 +574,7 @@
           "format" : "string",
           "default" : "good-karma"
         } ],
-        "tags" : [ "Witness" ],
+        "tags" : [ "Witness Api", "Condenser Api" ],
         "responses" : {
           "200" : {
             "description" : "Result",
@@ -575,7 +615,7 @@
           "format" : "int32",
           "default" : 10
         } ],
-        "tags" : [ "Witness" ],
+        "tags" : [ "Witness Api", "Condenser Api" ],
         "responses" : {
           "200" : {
             "description" : "Result",
@@ -599,7 +639,7 @@
       "get" : {
         "summary" : "get_active_witnesses",
         "description" : "get_active_witnesses\n",
-        "tags" : [ "Witness" ],
+        "tags" : [ "Witness Api" ],
         "responses" : {
           "200" : {
             "description" : "Result",
@@ -664,7 +704,7 @@
           "format" : "string",
           "default" : "{\"account_creation_fee\":\"20.000 STEEM\",\"maximum_block_size\":65536,\"sbd_interest_rate\":100}"
         } ],
-        "tags" : [ "Witness" ],
+        "tags" : [ "Witness Api" ],
         "responses" : {
           "200" : {
             "description" : "Result",
@@ -711,7 +751,7 @@
           "type" : "number",
           "format" : "int32"
         } ],
-        "tags" : [ "Market" ],
+        "tags" : [ "Market History Api", "Condenser Api" ],
         "responses" : {
           "200" : {
             "description" : "Result",
@@ -735,7 +775,7 @@
       "get" : {
         "summary" : "get_market_history_buckets",
         "description" : "Returns the bucket seconds being tracked by the plugin.\n",
-        "tags" : [ "Market" ],
+        "tags" : [ "Market History Api", "Condenser Api" ],
         "responses" : {
           "200" : {
             "description" : "Result",
@@ -759,7 +799,62 @@
       "get" : {
         "summary" : "get_miner_queue",
         "description" : "get_miner_queue\n",
-        "tags" : [ "Witness" ],
+        "tags" : [ "Witness Api" ],
+        "responses" : {
+          "200" : {
+            "description" : "Result",
+            "schema" : {
+              "type" : "array",
+              "items" : {
+                "$ref" : "#/definitions/_"
+              }
+            }
+          },
+          "default" : {
+            "description" : "Unexpected error",
+            "schema" : {
+              "$ref" : "#/definitions/Error"
+            }
+          }
+        }
+      }
+    },
+    "/get_methods" : {
+      "get" : {
+        "summary" : "jsonrpc.get_methods",
+        "description" : "Returns a list of methods supported by the JSON RPC API.\n",
+        "tags" : [ "Jsonrpc" ],
+        "responses" : {
+          "200" : {
+            "description" : "Result",
+            "schema" : {
+              "type" : "array",
+              "items" : {
+                "$ref" : "#/definitions/_"
+              }
+            }
+          },
+          "default" : {
+            "description" : "Unexpected error",
+            "schema" : {
+              "$ref" : "#/definitions/Error"
+            }
+          }
+        }
+      }
+    },
+    "/get_signature" : {
+      "get" : {
+        "summary" : "jsonrpc.get_signature",
+        "description" : "Returns the signature information for a JSON RPC method including the arguments and expected response JSON.\n",
+        "parameters" : [ {
+          "name" : "method",
+          "in" : "query",
+          "required" : true,
+          "type" : "string",
+          "format" : "string"
+        } ],
+        "tags" : [ "Jsonrpc" ],
         "responses" : {
           "200" : {
             "description" : "Result",
@@ -800,7 +895,7 @@
           "format" : "int32",
           "default" : 10
         } ],
-        "tags" : [ "Market" ],
+        "tags" : [ "Market History Api" ],
         "responses" : {
           "200" : {
             "description" : "Result",
@@ -825,7 +920,7 @@
         "summary" : "get_open_orders",
         "description" : "get_open_orders\n",
         "parameters" : [ {
-          "name" : "owner",
+          "name" : "owner"
           "in" : "query",
           "description" : "account name.",
           "required" : true,
@@ -833,7 +928,7 @@
           "format" : "string",
           "default" : "good-karma"
         } ],
-        "tags" : [ "Market" ],
+        "tags" : [ "Market History Api", "Condenser Api" ],
         "responses" : {
           "200" : {
             "description" : "Result",
@@ -866,7 +961,7 @@
           "format" : "int32",
           "default" : 10
         } ],
-        "tags" : [ "Market" ],
+        "tags" : [ "Market History Api", "Condenser Api" ],
         "responses" : {
           "200" : {
             "description" : "Result",
@@ -1012,6 +1107,49 @@
         }
       }
     },
+    "/get_ranked_posts" : {
+      "get" : {
+        "summary" : "bridge.get_ranked_posts",
+        "description" : "Get ranked posts\n",
+        "parameters" : [ {
+          "name" : "sort",
+          "in" : "query",
+          "required" : false,
+          "type" : "string",
+          "format" : "string"
+        }, {
+          "name" : "tag",
+          "in" : "query",
+          "required" : true,
+          "type" : "string",
+          "format" : "string"
+        }, {
+          "name" : "observer",
+          "in" : "query",
+          "required" : false,
+          "type" : "string",
+          "format" : "string"
+        } ],
+        "tags" : [ "Condenser Api" ],
+        "responses" : {
+          "200" : {
+            "description" : "Result",
+            "schema" : {
+              "type" : "array",
+              "items" : {
+                "$ref" : "#/definitions/_"
+              }
+            }
+          },
+          "default" : {
+            "description" : "Unexpected error",
+            "schema" : {
+              "$ref" : "#/definitions/Error"
+            }
+          }
+        }
+      }
+    },
     "/get_recent_trades" : {
       "get" : {
         "summary" : "get_recent_trades",
@@ -1026,7 +1164,7 @@
           "format" : "int32",
           "default" : 10
         } ],
-        "tags" : [ "Condenser" ],
+        "tags" : [ "Condenser Api" ],
         "responses" : {
           "200" : {
             "description" : "Result",
@@ -1050,7 +1188,7 @@
       "get" : {
         "summary" : "get ticker",
         "description" : "Returns the market ticker for the internal SBD:STEEM market.\n",
-        "tags" : [ "Market" ],
+        "tags" : [ "Market History Api", "Condenser Api" ],
         "responses" : {
           "200" : {
             "description" : "Result",
@@ -1091,7 +1229,7 @@
           "format" : "number",
           "default" : 10
         } ],
-        "tags" : [ "Tags" ],
+        "tags" : [ "Condenser Api" ],
         "responses" : {
           "200" : {
             "description" : "Result",
@@ -1132,7 +1270,7 @@
           "format" : "int",
           "default" : 10
         } ],
-        "tags" : [ "Tags" ],
+        "tags" : [ "Condenser Api" ],
         "responses" : {
           "200" : {
             "description" : "An array of products",
@@ -1173,7 +1311,7 @@
           "format" : "string",
           "default" : "test"
         } ],
-        "tags" : [ "Tags" ],
+        "tags" : [ "Tags Api", "Condenser Api" ],
         "responses" : {
           "200" : {
             "description" : "Result",
@@ -1214,7 +1352,7 @@
           "format" : "string",
           "default" : "test"
         } ],
-        "tags" : [ "Post" ],
+        "tags" : [ "Condenser Api" ],
         "responses" : {
           "200" : {
             "description" : "Result",
@@ -1255,7 +1393,7 @@
           "format" : "string",
           "default" : "test"
         } ],
-        "tags" : [ "Tags" ],
+        "tags" : [ "Tags Api" ],
         "responses" : {
           "200" : {
             "description" : "Result",
@@ -1277,7 +1415,7 @@
     },
     "/get_discussions_by_trending" : {
       "get" : {
-        "summary" : "get discussions",
+        "summary" : "get discussions by trending",
         "description" : "get discussions, | query example {\"limit\":\"10\", \"tag\":\"steem\"} OR {\"start_author\":\"author\", \"permlink\":\"permlink\"} for pagination\n",
         "parameters" : [ {
           "name" : "query",
@@ -1288,7 +1426,7 @@
           "format" : "string",
           "default" : "{\"tag\":\"steem\", \"limit\": \"10\"}"
         } ],
-        "tags" : [ "Post" ],
+        "tags" : [ "Tags Api", "Condenser Api" ],
         "responses" : {
           "200" : {
             "description" : "Result",
@@ -1310,7 +1448,8 @@
     },
     "/get_discussions_by_trending30" : {
       "get" : {
-        "summary" : "get discussions",
+
+        "summary" : "get discussions by trending 30",
         "description" : "get discussions, | query example {\"limit\":\"10\", \"tag\":\"steem\"} OR {\"start_author\":\"author\", \"permlink\":\"permlink\"} for pagination\n",
         "parameters" : [ {
           "name" : "query",
@@ -1321,7 +1460,7 @@
           "format" : "string",
           "default" : "{\"tag\":\"steem\", \"limit\": \"10\"}"
         } ],
-        "tags" : [ "Tags" ],
+        "tags" : [ "Tags Api" ],
         "responses" : {
           "200" : {
             "description" : "Result",
@@ -1354,7 +1493,7 @@
           "format" : "string",
           "default" : "{\"tag\":\"steem\", \"limit\": \"10\"}"
         } ],
-        "tags" : [ "Tags" ],
+        "tags" : [ "Tags Api", "Condenser Api" ],
         "responses" : {
           "200" : {
             "description" : "Result",
@@ -1371,6 +1510,7 @@
               "$ref" : "#/definitions/Error"
             }
           }
+
         }
       }
     },
@@ -1387,7 +1527,7 @@
           "format" : "string",
           "default" : "{\"tag\":\"steem\", \"limit\": \"10\"}"
         } ],
-        "tags" : [ "Post" ],
+        "tags" : [ "Tags Api" ],
         "responses" : {
           "200" : {
             "description" : "Result",
@@ -1420,7 +1560,7 @@
           "format" : "string",
           "default" : "{\"tag\":\"steem\", \"limit\": \"10\"}"
         } ],
-        "tags" : [ "Tags" ],
+        "tags" : [ "Tags Api", "Condenser Api" ],
         "responses" : {
           "200" : {
             "description" : "Result",
@@ -1453,7 +1593,7 @@
           "format" : "string",
           "default" : "{\"tag\":\"steem\", \"limit\": \"10\"}"
         } ],
-        "tags" : [ "Post" ],
+        "tags" : [ "Tags Api", "Condenser Api" ],
         "responses" : {
           "200" : {
             "description" : "Result",
@@ -1486,7 +1626,6 @@
           "format" : "string",
           "default" : "{\"tag\":\"steem\", \"limit\": \"10\"}"
         } ],
-        "tags" : [ "Tags" ],
         "responses" : {
           "200" : {
             "description" : "Result",
@@ -1503,7 +1642,8 @@
               "$ref" : "#/definitions/Error"
             }
           }
-        }
+        },
+        "tags" : [ "Condenser Api" ]
       }
     },
     "/get_comment_discussions_by_payout" : {
@@ -1519,7 +1659,6 @@
           "format" : "string",
           "default" : "{\"tag\":\"steem\", \"limit\": \"10\"}"
         } ],
-        "tags" : [ "Tags" ],
         "responses" : {
           "200" : {
             "description" : "Result",
@@ -1536,13 +1675,14 @@
               "$ref" : "#/definitions/Error"
             }
           }
-        }
+        },
+        "tags" : [ "Tags Api" ]
       }
     },
     "/get_discussions" : {
       "get" : {
         "summary" : "Returns the discussions given an author and permlink",
-        "description" : "get discussions, | query example  {\"author\":\"author\", \"permlink\":\"permlink\"}\n",
+        "description" : "**get discussions**, | **query example**  *{\"author\":\"author\", \"permlink\":\"permlink\"}*\n",
         "parameters" : [ {
           "name" : "query",
           "in" : "query",
@@ -1552,7 +1692,6 @@
           "format" : "string",
           "default" : "{\"author\":\"\", \"permlink\": \"\"}"
         } ],
-        "tags" : [ "Tags" ],
         "responses" : {
           "200" : {
             "description" : "Result",
@@ -1569,12 +1708,13 @@
               "$ref" : "#/definitions/Error"
             }
           }
-        }
+        },
+        "tags" : [ "Tags Api" ]
       }
     },
     "/get_discussions_by_votes" : {
       "get" : {
-        "summary" : "get discussions",
+        "summary" : "get discussions by votes",
         "description" : "get discussions, | query example {\"limit\":\"10\", \"tag\":\"steem\"} OR {\"start_author\":\"author\", \"permlink\":\"permlink\"} for pagination\n",
         "parameters" : [ {
           "name" : "query",
@@ -1585,7 +1725,6 @@
           "format" : "string",
           "default" : "{\"tag\":\"steem\", \"limit\": \"10\"}"
         } ],
-        "tags" : [ "Post" ],
         "responses" : {
           "200" : {
             "description" : "Result",
@@ -1602,7 +1741,8 @@
               "$ref" : "#/definitions/Error"
             }
           }
-        }
+        },
+        "tags" : [ "Tags Api", "Condenser Api" ]
       }
     },
     "/get_discussions_by_children" : {
@@ -1618,7 +1758,6 @@
           "format" : "string",
           "default" : "{\"tag\":\"steem\", \"limit\": \"10\"}"
         } ],
-        "tags" : [ "Tags" ],
         "responses" : {
           "200" : {
             "description" : "Result",
@@ -1635,12 +1774,13 @@
               "$ref" : "#/definitions/Error"
             }
           }
-        }
+        },
+        "tags" : [ "Tags Api", "Condenser Api" ]
       }
     },
     "/get_discussions_by_hot" : {
       "get" : {
-        "summary" : "get discussions",
+        "summary" : "get discussions by hot",
         "description" : "get discussions, | query example {\"limit\":\"10\", \"tag\":\"steem\"} OR {\"start_author\":\"author\", \"permlink\":\"permlink\"} for pagination\n",
         "parameters" : [ {
           "name" : "query",
@@ -1651,7 +1791,6 @@
           "format" : "string",
           "default" : "{\"tag\":\"steem\", \"limit\": \"10\"}"
         } ],
-        "tags" : [ "Post" ],
         "responses" : {
           "200" : {
             "description" : "Result",
@@ -1668,12 +1807,13 @@
               "$ref" : "#/definitions/Error"
             }
           }
-        }
+        },
+        "tags" : [ "Tags Api", "Condenser Api" ]
       }
     },
     "/get_discussions_by_feed" : {
       "get" : {
-        "summary" : "get discussions",
+        "summary" : "get discussions by feed",
         "description" : "get discussions, | query example {\"limit\":\"10\", \"tags\":\"good-karma\"} OR {\"start_author\":\"author\", \"permlink\":\"permlink\"} for pagination\n",
         "parameters" : [ {
           "name" : "query",
@@ -1684,7 +1824,6 @@
           "format" : "string",
           "default" : "{\"tag\":\"good-karma\", \"limit\": \"10\"}"
         } ],
-        "tags" : [ "Post" ],
         "responses" : {
           "200" : {
             "description" : "Result",
@@ -1701,7 +1840,8 @@
               "$ref" : "#/definitions/Error"
             }
           }
-        }
+        },
+        "tags" : [ "Tags Api", "Condenser Api" ]
       }
     },
     "/get_discussions_by_blog" : {
@@ -1717,7 +1857,6 @@
           "format" : "string",
           "default" : "{\"tag\":\"good-karma\", \"limit\": \"10\"}"
         } ],
-        "tags" : [ "Post" ],
         "responses" : {
           "200" : {
             "description" : "Result",
@@ -1734,7 +1873,8 @@
               "$ref" : "#/definitions/Error"
             }
           }
-        }
+        },
+        "tags" : [ "Tags Api", "Condenser Api" ]
       }
     },
     "/get_discussions_by_comments" : {
@@ -1750,7 +1890,6 @@
           "format" : "string",
           "default" : "{\"start_author\":\"smooth\",\"start_permlink\":\"test\",\"limit\":\"10\"}"
         } ],
-        "tags" : [ "Post" ],
         "responses" : {
           "200" : {
             "description" : "Result",
@@ -1767,7 +1906,8 @@
               "$ref" : "#/definitions/Error"
             }
           }
-        }
+        },
+        "tags" : [ "Tags Api", "Condenser Api" ]
       }
     },
     "/get_discussions_by_author_before_date" : {
@@ -1807,7 +1947,6 @@
           "format" : "int32",
           "default" : 10
         } ],
-        "tags" : [ "Post" ],
         "responses" : {
           "200" : {
             "description" : "Result",
@@ -1824,7 +1963,8 @@
               "$ref" : "#/definitions/Error"
             }
           }
-        }
+        },
+        "tags" : [ "Tags Api" ]
       }
     },
     "/get_replies_by_last_update" : {
@@ -1856,7 +1996,6 @@
           "format" : "int32",
           "default" : 10
         } ],
-        "tags" : [ "Post" ],
         "responses" : {
           "200" : {
             "description" : "Result",
@@ -1873,7 +2012,8 @@
               "$ref" : "#/definitions/Error"
             }
           }
-        }
+        },
+        "tags" : [ "Condenser Api" ]
       }
     },
     "/get_reward_fund" : {
@@ -1922,7 +2062,6 @@
           "format" : "string",
           "default" : "/@good-karma"
         } ],
-        "tags" : [ "Account", "Post" ],
         "responses" : {
           "200" : {
             "description" : "Result",
@@ -1939,12 +2078,13 @@
               "$ref" : "#/definitions/Error"
             }
           }
-        }
+        },
+        "tags" : [ "Condenser Api" ]
       }
     },
     "/get_account_reputations" : {
       "get" : {
-        "summary" : "get_account_votes",
+        "summary" : "get_account_reputations",
         "description" : "Returns a list of account reputations. Parameters: account_lower_bound:string; limit:int up to 1000\n",
         "parameters" : [ {
           "name" : "account_lower_bound",
@@ -1963,7 +2103,7 @@
           "format" : "int",
           "default" : 10
         } ],
-        "tags" : [ "Account" ],
+        "tags" : [ "Condenser Api", "Reputation Api", "Follow Api" ],
         "responses" : {
           "200" : {
             "description" : "Result",
@@ -1996,14 +2136,14 @@
           "format" : "string",
           "default" : "smooth"
         } ],
-        "tags" : [ "Account" ],
+        "tags" : [ "Condenser Api" ],
         "responses" : {
           "200" : {
             "description" : "Result",
             "schema" : {
               "type" : "array",
               "items" : {
-                "$ref" : "#/definitions/_"
+                "$ref" : "#/definitions/get_account_votes"
               }
             }
           },
@@ -2043,14 +2183,14 @@
           "format" : "number",
           "default" : 10
         } ],
-        "tags" : [ "Account" ],
+        "tags" : [ "Condenser Api", "Account History Api" ],
         "responses" : {
           "200" : {
             "description" : "Result",
             "schema" : {
               "type" : "number",
               "items" : {
-                "$ref" : "#/definitions/Accounts"
+                "$ref" : "#/definitions/get_account_history"
               }
             }
           },
@@ -2076,7 +2216,7 @@
           "format" : "string",
           "default" : "good-karma"
         } ],
-        "tags" : [ "Market" ],
+        "tags" : [ "Market History Api", "Condenser Api" ],
         "responses" : {
           "200" : {
             "description" : "Result",
@@ -2098,7 +2238,7 @@
     },
     "/get_accounts" : {
       "get" : {
-        "summary" : "Account",
+        "summary" : "Return accounts, queried by name.",
         "description" : "Get Accounts from Steem\n",
         "parameters" : [ {
           "name" : "names[]",
@@ -2109,47 +2249,6 @@
           "format" : "string",
           "default" : "[\"good-karma\", \"fabien\"]"
         } ],
-        "tags" : [ "Account" ],
-        "responses" : {
-          "200" : {
-            "description" : "Result",
-            "schema" : {
-              "type" : "array",
-              "items" : {
-                "$ref" : "#/definitions/_"
-              }
-            }
-          },
-          "default" : {
-            "description" : "Unexpected error",
-            "schema" : {
-              "$ref" : "#/definitions/Error"
-            }
-          }
-        }
-      }
-    },
-    "/get_accounts_bandwidth" : {
-      "get" : {
-        "summary" : "condenser_api.get_account_bandwidth",
-        "description" : "Returns the available bandwidth of an account. \n",
-        "parameters" : [ {
-          "name" : "account",
-          "in" : "query",
-          "description" : "name of account",
-          "required" : true,
-          "type" : "string",
-          "format" : "string",
-          "default" : "alice"
-        }, {
-          "name" : "type",
-          "in" : "query",
-          "description" : "type name",
-          "required" : true,
-          "type" : "string",
-          "format" : "string",
-          "default" : "market"
-        } ],
         "tags" : [ "Condenser Api" ],
         "responses" : {
           "200" : {
@@ -2157,7 +2256,7 @@
             "schema" : {
               "type" : "array",
               "items" : {
-                "$ref" : "#/definitions/get_account_bandwidth"
+                "$ref" : "#/definitions/get_accounts"
               }
             }
           },
@@ -2216,7 +2315,55 @@
           "format" : "string",
           "default" : "good-karma"
         } ],
-        "tags" : [ "Account" ],
+        "responses" : {
+          "200" : {
+            "description" : "Result",
+            "schema" : {
+              "type" : "array",
+              "items" : {
+                "$ref" : "#/definitions/_"
+              }
+            }
+          },
+          "default" : {
+            "description" : "Unexpected error",
+            "schema" : {
+              "$ref" : "#/definitions/Error"
+            }
+          }
+        },
+        "tags" : [ "Condenser Api" ]
+      }
+    },
+    "/get_resource_params" : {
+      "get" : {
+        "summary" : "get_resource_params",
+        "description" : "Exports all relevant resource size constants, in particular the measurement-based execution time parameters\n",
+        "tags" : [ "RC Api" ],
+        "responses" : {
+          "200" : {
+            "description" : "Result",
+            "schema" : {
+              "type" : "array",
+              "items" : {
+                "$ref" : "#/definitions/_"
+              }
+            }
+          },
+          "default" : {
+            "description" : "Unexpected error",
+            "schema" : {
+              "$ref" : "#/definitions/Error"
+            }
+          }
+        }
+      }
+    },
+    "/get_resource_pool" : {
+      "get" : {
+        "summary" : "get_resource_params",
+        "description" : "Exports all relevant resource size constants, in particular the measurement-based execution time parameters\n",
+        "tags" : [ "RC Api" ],
         "responses" : {
           "200" : {
             "description" : "Result",
@@ -2323,7 +2470,7 @@
           "format" : "string",
           "default" : "good-karma"
         } ],
-        "tags" : [ "Account" ],
+        "tags" : [ "Follow Api", "Condenser Api" ],
         "responses" : {
           "200" : {
             "description" : "Result",
@@ -2380,7 +2527,7 @@
           "format" : "number",
           "default" : 10
         } ],
-        "tags" : [ "Account" ],
+        "tags" : [ "Follow Api", "Condenser Api" ],
         "responses" : {
           "200" : {
             "description" : "Result",
@@ -2437,7 +2584,7 @@
           "format" : "number",
           "default" : 10
         } ],
-        "tags" : [ "Account" ],
+        "tags" : [ "Follow Api", "Account By Key Api", "Condenser Api" ],
         "responses" : {
           "200" : {
             "description" : "Result",
@@ -2478,7 +2625,7 @@
           "format" : "int32",
           "default" : 7595656
         } ],
-        "tags" : [ "Condenser" ],
+        "tags" : [ "Condenser Api" ],
         "responses" : {
           "200" : {
             "description" : "Result",
@@ -2518,7 +2665,6 @@
           "type" : "integer",
           "format" : "int32"
         } ],
-        "tags" : [ "Account" ],
         "responses" : {
           "200" : {
             "description" : "Result",
@@ -2535,7 +2681,8 @@
               "$ref" : "#/definitions/Error"
             }
           }
-        }
+        },
+        "tags" : [ "Condenser Api" ]
       }
     },
     "/get_withdraw_routes" : {
@@ -2558,7 +2705,7 @@
           "type" : "string",
           "format" : "string"
         } ],
-        "tags" : [ "Account" ],
+        "tags" : [ "Condenser Api" ],
         "responses" : {
           "200" : {
             "description" : "Result",
@@ -2618,6 +2765,45 @@
         }
       }
     },
+    "/get_reblogged_by" : {
+      "get" : {
+        "summary" : "follow_api.get_reblogged_by",
+        "description" : "Returns a list of account reputations\n",
+        "parameters" : [ {
+          "name" : "account_lower_bound",
+          "in" : "query",
+          "required" : true,
+          "type" : "string",
+          "format" : "string"
+        }, {
+          "name" : "limit",
+          "in" : "query",
+          "description" : "limit number",
+          "required" : true,
+          "type" : "number",
+          "format" : "int32",
+          "default" : 0
+        } ],
+        "tags" : [ "Follow Api", "Condenser Api" ],
+        "responses" : {
+          "200" : {
+            "description" : "Result",
+            "schema" : {
+              "type" : "array",
+              "items" : {
+                "$ref" : "#/definitions/get_reserve_ratio"
+              }
+            }
+          },
+          "default" : {
+            "description" : "Unexpected error",
+            "schema" : {
+              "$ref" : "#/definitions/Error"
+            }
+          }
+        }
+      }
+    },
     "/get_reserve_ratio" : {
       "get" : {
         "summary" : "get_reserve_ratio",
@@ -2655,7 +2841,6 @@
           "format" : "string",
           "default" : "jesta"
         } ],
-        "tags" : [ "Account" ],
         "responses" : {
           "200" : {
             "description" : "Result",
@@ -2672,7 +2857,8 @@
               "$ref" : "#/definitions/Error"
             }
           }
-        }
+        },
+        "tags" : [ "Condenser Api" ]
       }
     },
     "/get_savings_withdraw_to" : {
@@ -2688,7 +2874,6 @@
           "format" : "string",
           "default" : "jesta"
         } ],
-        "tags" : [ "Account" ],
         "responses" : {
           "200" : {
             "description" : "Result",
@@ -2705,7 +2890,8 @@
               "$ref" : "#/definitions/Error"
             }
           }
-        }
+        },
+        "tags" : [ "Condenser Api" ]
       }
     },
     "/get_block" : {
@@ -2803,7 +2989,7 @@
           "format" : "int32",
           "default" : 0
         } ],
-        "tags" : [ "Blog" ],
+        "tags" : [ "Follow Api" ],
         "responses" : {
           "200" : {
             "description" : "Result",
@@ -2836,7 +3022,7 @@
           "format" : "string",
           "default" : "steemit"
         } ],
-        "tags" : [ "Blog" ],
+        "tags" : [ "Follow Api" ],
         "responses" : {
           "200" : {
             "description" : "Result",
@@ -2885,7 +3071,7 @@
           "format" : "int32",
           "default" : 0
         } ],
-        "tags" : [ "Blog" ],
+        "tags" : [ "Follow Api" ],
         "responses" : {
           "200" : {
             "description" : "Result",
@@ -2926,7 +3112,7 @@
           "format" : "bool",
           "default" : false
         } ],
-        "tags" : [ "Network" ],
+        "tags" : [ "Follow Api", "Account History Api", "Condenser Api" ],
         "responses" : {
           "200" : {
             "description" : "Result",
@@ -2959,7 +3145,7 @@
           "format" : "string",
           "default" : "steemit"
         } ],
-        "tags" : [ "Tags" ],
+        "tags" : [ "Tags Api", "Condenser Api" ],
         "responses" : {
           "200" : {
             "description" : "Result",
@@ -3006,7 +3192,7 @@
           "format" : "int",
           "default" : 1000
         } ],
-        "tags" : [ "Market" ],
+        "tags" : [ "Market History Api", "Condenser Api" ],
         "responses" : {
           "200" : {
             "description" : "Result",
@@ -3038,7 +3224,6 @@
           "type" : "string",
           "format" : "string"
         } ],
-        "tags" : [ "Network" ],
         "responses" : {
           "200" : {
             "description" : "Result",
@@ -3055,7 +3240,8 @@
               "$ref" : "#/definitions/Error"
             }
           }
-        }
+        },
+        "tags" : [ "Condenser Api" ]
       }
     },
     "/get_transaction" : {
@@ -3071,7 +3257,7 @@
           "format" : "string",
           "default" : "b86745936b1e471c0efb78d0f80bd331f984d11f"
         } ],
-        "tags" : [ "Network" ],
+        "tags" : [ "Account History Api", "Condenser Api" ],
         "responses" : {
           "200" : {
             "description" : "Result",
@@ -3110,7 +3296,6 @@
           "type" : "string",
           "format" : "string"
         } ],
-        "tags" : [ "Network" ],
         "responses" : {
           "200" : {
             "description" : "Result",
@@ -3127,7 +3312,8 @@
               "$ref" : "#/definitions/Error"
             }
           }
-        }
+        },
+        "tags" : [ "Condenser Api" ]
       }
     },
     "/get_potential_signatures" : {
@@ -3142,7 +3328,6 @@
           "type" : "string",
           "format" : "string"
         } ],
-        "tags" : [ "Network" ],
         "responses" : {
           "200" : {
             "description" : "Result",
@@ -3159,13 +3344,14 @@
               "$ref" : "#/definitions/Error"
             }
           }
-        }
+        },
+        "tags" : [ "Condenser Api" ]
       }
     },
     "/verify_authority" : {
       "get" : {
         "summary" : "verify_authority",
-        "description" : "verify_authority\n",
+        "description" : "Returns true if the transaction has all of the required signatures.",
         "parameters" : [ {
           "name" : "trx",
           "in" : "query",
@@ -3174,7 +3360,6 @@
           "type" : "string",
           "format" : "string"
         } ],
-        "tags" : [ "Network" ],
         "responses" : {
           "200" : {
             "description" : "Result",
@@ -3191,13 +3376,14 @@
               "$ref" : "#/definitions/Error"
             }
           }
-        }
+        },
+        "tags" : [ "Condenser Api" ]
       }
     },
     "/verify_account_authority" : {
       "get" : {
         "summary" : "verify_account_authority",
-        "description" : "verify_account_authority\n",
+        "description" : "condenser_api.verify_account_authority\n",
         "parameters" : [ {
           "name" : "nameOrId",
           "in" : "query",
@@ -3213,7 +3399,6 @@
           "type" : "string",
           "format" : "string"
         } ],
-        "tags" : [ "Network" ],
         "responses" : {
           "200" : {
             "description" : "Result",
@@ -3230,7 +3415,8 @@
               "$ref" : "#/definitions/Error"
             }
           }
-        }
+        },
+        "tags" : [ "Condenser Api" ]
       }
     },
     "/get_key_references" : {
@@ -3246,7 +3432,7 @@
           "format" : "string",
           "default" : ""
         } ],
-        "tags" : [ "Network" ],
+        "tags" : [ "Condenser Api" ],
         "responses" : {
           "200" : {
             "description" : "Result",
@@ -3268,8 +3454,8 @@
     },
     "/broadcast_transaction" : {
       "get" : {
-        "summary" : "broadcast_transaction",
-        "description" : "broadcast_transaction\n",
+        "summary" : "condenser_api.broadcast_transaction",
+        "description" : "Used to broadcast a transaction.\n",
         "parameters" : [ {
           "name" : "trx",
           "in" : "query",
@@ -3278,14 +3464,14 @@
           "type" : "string",
           "format" : "string"
         } ],
-        "tags" : [ "Network" ],
+        "tags" : [ "Condenser Api", "Network Broadcast Api" ],
         "responses" : {
           "200" : {
             "description" : "Result",
             "schema" : {
               "type" : "array",
               "items" : {
-                "$ref" : "#/definitions/_"
+                "$ref" : "#/definitions/broadcast_transaction"
               }
             }
           },
@@ -3310,7 +3496,7 @@
           "type" : "string",
           "format" : "string"
         } ],
-        "tags" : [ "Network" ],
+        "tags" : [ "Condenser Api" ],
         "responses" : {
           "200" : {
             "description" : "Result",
@@ -3342,14 +3528,14 @@
           "type" : "string",
           "format" : "string"
         } ],
-        "tags" : [ "Network" ],
+        "tags" : [ "Network Broadcast Api" ],
         "responses" : {
           "200" : {
             "description" : "Result",
             "schema" : {
               "type" : "array",
               "items" : {
-                "$ref" : "#/definitions/_"
+                "$ref" : "#/definitions/broadcast_block"
               }
             }
           },
@@ -3379,7 +3565,6 @@
           "type" : "string",
           "format" : "string"
         } ],
-        "tags" : [ "Network" ],
         "responses" : {
           "200" : {
             "description" : "Result",
@@ -3396,7 +3581,8 @@
               "$ref" : "#/definitions/Error"
             }
           }
-        }
+        },
+        "tags" : [ "Condenser Api" ]
       }
     },
     "/set_max_block_age" : {
@@ -3411,7 +3597,6 @@
           "type" : "integer",
           "format" : "int32"
         } ],
-        "tags" : [ "Network" ],
         "responses" : {
           "200" : {
             "description" : "Result",
@@ -3428,44 +3613,8 @@
               "$ref" : "#/definitions/Error"
             }
           }
-        }
-      }
-    },
-    "/set_subscribe_callback" : {
-      "get" : {
-        "summary" : "WARNING: can only be used in Steem node or in scripts set_subscribe_callback\n",
-        "description" : "set_subscribe_callback \n",
-        "parameters" : [ {
-          "name" : "callback",
-          "in" : "query",
-          "description" : "callback function.",
-          "type" : "string",
-          "format" : "string"
-        }, {
-          "name" : "clearFilter",
-          "in" : "query",
-          "description" : "clearFilter.",
-          "type" : "string",
-          "format" : "string"
-        } ],
-        "tags" : [ "Network" ],
-        "responses" : {
-          "200" : {
-            "description" : "Result",
-            "schema" : {
-              "type" : "array",
-              "items" : {
-                "$ref" : "#/definitions/_"
-              }
-            }
-          },
-          "default" : {
-            "description" : "Unexpected error",
-            "schema" : {
-              "$ref" : "#/definitions/Error"
-            }
-          }
-        }
+        },
+        "tags" : [ "Condenser Api" ]
       }
     },
     "/set_pending_transaction_callback" : {
@@ -3479,7 +3628,6 @@
           "type" : "string",
           "format" : "string"
         } ],
-        "tags" : [ "Network" ],
         "responses" : {
           "200" : {
             "description" : "Result",
@@ -3496,7 +3644,8 @@
               "$ref" : "#/definitions/Error"
             }
           }
-        }
+        },
+        "tags" : [ "Condenser Api" ]
       }
     },
     "/set_block_applied_callback" : {
@@ -3510,7 +3659,6 @@
           "type" : "string",
           "format" : "string"
         } ],
-        "tags" : [ "Network" ],
         "responses" : {
           "200" : {
             "description" : "Result",
@@ -3527,14 +3675,14 @@
               "$ref" : "#/definitions/Error"
             }
           }
-        }
+        },
+        "tags" : [ "Condenser Api" ]
       }
     },
     "/cancel_all_subscriptions" : {
       "get" : {
         "summary" : "WARNING: can only be used in Steem node or in scripts cancel_all_subscriptions\n",
         "description" : "cancel_all_subscriptions \n",
-        "tags" : [ "Network" ],
         "responses" : {
           "200" : {
             "description" : "Result",
@@ -3551,7 +3699,8 @@
               "$ref" : "#/definitions/Error"
             }
           }
-        }
+        },
+        "tags" : [ "Condenser Api" ]
       }
     },
     "/get_api_by_name" : {
@@ -3566,7 +3715,6 @@
           "type" : "string",
           "format" : "string"
         } ],
-        "tags" : [ "Network" ],
         "responses" : {
           "200" : {
             "description" : "Result",
@@ -3583,11 +3731,17 @@
               "$ref" : "#/definitions/Error"
             }
           }
-        }
+        },
+        "tags" : [ "Condenser Api" ]
       }
     },
     "/swagger" : {
       "x-swagger-pipe" : "swagger_raw"
+    },
+    "/set_subscribe_callback" : {
+      "get" : {
+        "tags" : [ "Condenser Api" ]
+      }
     }
   },
   "definitions" : {
@@ -3602,6 +3756,38 @@
         "example_" : {
           "type" : "string",
           "description" : "description of example_ etc."
+        }
+      }
+    },
+    "broadcast_block" : {
+      "type" : "object",
+      "properties" : {
+        "previous" : {
+          "type" : "string"
+        },
+        "timestamp" : {
+          "type" : "string"
+        },
+        "witness" : {
+          "type" : "string"
+        },
+        "transaction_merkle_root" : {
+          "type" : "string"
+        },
+        "extensions" : {
+          "type" : "array",
+          "items" : {
+            "type" : "string"
+          }
+        },
+        "witness_signature" : {
+          "type" : "string"
+        },
+        "transactions" : {
+          "type" : "array",
+          "items" : {
+            "type" : "string"
+          }
         }
       }
     },
@@ -3639,6 +3825,279 @@
         }
       }
     },
+    "get_accounts" : {
+      "type" : "object",
+      "description" : "Return accounts, querid by name.",
+      "properties" : {
+        "id" : {
+          "type" : "number"
+        },
+        "name" : {
+          "type" : "string"
+        },
+        "owner" : {
+          "type" : "object",
+          "properties" : {
+            "weight_threshold" : {
+              "type" : "integer"
+            },
+            "account_auths" : {
+              "type" : "array",
+              "items" : {
+                "type" : "string"
+              }
+            },
+            "key_auths" : {
+              "type" : "array",
+              "items" : {
+                "type" : "array",
+                "items" : {
+                  "type" : "string"
+                }
+              }
+            }
+          }
+        },
+        "active" : {
+          "type" : "object",
+          "properties" : {
+            "weight_threshold" : {
+              "type" : "number"
+            },
+            "account_auths" : {
+              "type" : "array",
+              "items" : {
+                "type" : "string"
+              }
+            },
+            "key_auths" : {
+              "type" : "array",
+              "items" : {
+                "type" : "array",
+                "items" : {
+                  "type" : "string"
+                }
+              }
+            }
+          }
+        },
+        "posting" : {
+          "type" : "object",
+          "properties" : {
+            "weight_threshold" : {
+              "type" : "number"
+            },
+            "account_auths" : {
+              "type" : "array",
+              "items" : {
+                "type" : "string"
+              }
+            },
+            "key_auths" : {
+              "type" : "array",
+              "items" : {
+                "type" : "array",
+                "items" : {
+                  "type" : "string"
+                }
+              }
+            }
+          }
+        },
+        "memo_key" : {
+          "type" : "string"
+        },
+        "json_metadata" : {
+          "type" : "string"
+        },
+        "proxy" : {
+          "type" : "string"
+        },
+        "last_owner_update" : {
+          "type" : "string"
+        },
+        "last_account_update" : {
+          "type" : "string"
+        },
+        "created" : {
+          "type" : "string"
+        },
+        "mined" : {
+          "type" : "boolean"
+        },
+        "recovery_account" : {
+          "type" : "string"
+        },
+        "last_account_recovery" : {
+          "type" : "string"
+        },
+        "reset_account" : {
+          "type" : "string"
+        },
+        "comment_count" : {
+          "type" : "number"
+        },
+        "lifetime_vote_count" : {
+          "type" : "number"
+        },
+        "post_count" : {
+          "type" : "number"
+        },
+        "can_vote" : {
+          "type" : "boolean"
+        },
+        "voting_power" : {
+          "type" : "number"
+        },
+        "last_vote_time" : {
+          "type" : "string"
+        },
+        "balance" : {
+          "type" : "string"
+        },
+        "savings_balance" : {
+          "type" : "string"
+        },
+        "sbd_balance" : {
+          "type" : "string"
+        },
+        "sbd_seconds" : {
+          "type" : "string"
+        },
+        "sbd_seconds_last_update" : {
+          "type" : "string"
+        },
+        "sbd_last_interest_payment" : {
+          "type" : "string"
+        },
+        "savings_sbd_balance" : {
+          "type" : "string"
+        },
+        "savings_sbd_seconds" : {
+          "type" : "string"
+        },
+        "savings_sbd_seconds_last_update" : {
+          "type" : "string"
+        },
+        "savings_sbd_last_interest_payment" : {
+          "type" : "string"
+        },
+        "savings_withdraw_requests" : {
+          "type" : "number"
+        },
+        "reward_sbd_balance" : {
+          "type" : "string"
+        },
+        "reward_steem_balance" : {
+          "type" : "string"
+        },
+        "reward_vesting_balance" : {
+          "type" : "string"
+        },
+        "reward_vesting_steem" : {
+          "type" : "string"
+        },
+        "vesting_shares" : {
+          "type" : "string"
+        },
+        "delegated_vesting_shares" : {
+          "type" : "string"
+        },
+        "received_vesting_shares" : {
+          "type" : "string"
+        },
+        "vesting_withdraw_rate" : {
+          "type" : "string"
+        },
+        "next_vesting_withdrawal" : {
+          "type" : "string"
+        },
+        "withdrawn" : {
+          "type" : "number"
+        },
+        "to_withdraw" : {
+          "type" : "number"
+        },
+        "withdraw_routes" : {
+          "type" : "number"
+        },
+        "curation_rewards" : {
+          "type" : "number"
+        },
+        "posting_rewards" : {
+          "type" : "number"
+        },
+        "proxied_vsf_votes" : {
+          "type" : "array",
+          "items" : {
+            "type" : "string"
+          }
+        },
+        "witnesses_voted_for" : {
+          "type" : "number"
+        },
+        "last_post" : {
+          "type" : "string"
+        },
+        "last_root_post" : {
+          "type" : "string"
+        },
+        "vesting_balance" : {
+          "type" : "string"
+        },
+        "reputation" : {
+          "type" : "string"
+        },
+        "transfer_history" : {
+          "type" : "array",
+          "items" : {
+            "type" : "string"
+          }
+        },
+        "market_history" : {
+          "type" : "array",
+          "items" : {
+            "type" : "string"
+          }
+        },
+        "post_history" : {
+          "type" : "array",
+          "items" : {
+            "type" : "string"
+          }
+        },
+        "vote_history" : {
+          "type" : "array",
+          "items" : {
+            "type" : "string"
+          }
+        },
+        "other_history" : {
+          "type" : "array",
+          "items" : {
+            "type" : "string"
+          }
+        },
+        "witness_votes" : {
+          "type" : "array",
+          "items" : {
+            "type" : "string"
+          }
+        },
+        "tags_usage" : {
+          "type" : "array",
+          "items" : {
+            "type" : "string"
+          }
+        },
+        "guest_bloggers" : {
+          "type" : "array",
+          "items" : {
+            "type" : "string"
+          }
+        }
+      }
+    },
     "get_account_bandwidth" : {
       "type" : "object",
       "properties" : {
@@ -3665,6 +4124,35 @@
     "get_account_count" : {
       "type" : "number",
       "description" : "number of registered accounts"
+    },
+    "get_account_reputations" : {
+      "type" : "object",
+      "description" : "list of account reputations"
+    },
+    "get_account_history" : {
+      "type" : "object",
+      "description" : "history of all operations for a given account"
+    },
+    "get_account_votes" : {
+      "type" : "object",
+      "description" : "return all votes by an account",
+      "properties" : {
+        "authorperm" : {
+          "type" : "string"
+        },
+        "weight" : {
+          "type" : "string"
+        },
+        "rshares" : {
+          "type" : "string"
+        },
+        "percent" : {
+          "type" : "string"
+        },
+        "time" : {
+          "type" : "string"
+        }
+      }
     },
     "Accounts" : {
       "type" : "object",
