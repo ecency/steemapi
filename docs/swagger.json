@@ -3760,11 +3760,6 @@
     },
     "/swagger" : {
       "x-swagger-pipe" : "swagger_raw"
-    },
-    "/set_subscribe_callback" : {
-      "get" : {
-        "tags" : [ "Condenser Api" ]
-      }
     }
   },
   "definitions" : {
