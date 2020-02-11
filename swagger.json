@@ -920,7 +920,7 @@
         "summary" : "get_open_orders",
         "description" : "get_open_orders\n",
         "parameters" : [ {
-          "name" : "owner"
+          "name" : "owner",
           "in" : "query",
           "description" : "account name.",
           "required" : true,
