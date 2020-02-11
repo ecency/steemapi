@@ -168,7 +168,7 @@
           "required" : true,
           "type" : "string",
           "format" : "string",
-          "default" : "hive-123456789"
+          "default" : "hive-125125"
         }, {
           "name" : "observer",
           "in" : "query",
@@ -176,6 +176,155 @@
           "type" : "string",
           "format" : "string",
           "default" : "alice"
+        } ],
+        "tags" : [ "Bridge" ],
+        "responses" : {
+          "200" : {
+            "description" : "Result",
+            "schema" : {
+              "type" : "array",
+              "items" : {
+                "$ref" : "#/definitions/_"
+              }
+            }
+          },
+          "default" : {
+            "description" : "Unexpected error",
+            "schema" : {
+              "$ref" : "#/definitions/Error"
+            }
+          }
+        }
+      }
+    },
+    "/get_ranked_posts" : {
+      "get" : {
+        "summary" : "get ranked posts in community",
+        "description" : "get ranked posts in community\nsort could be:\ntrending\nhot\ncreated\npromoted\npayout\npayout_comments\nmuted\n",
+        "parameters" : [ {
+          "name" : "sort",
+          "in" : "query",
+          "required" : true,
+          "type" : "string",
+          "format" : "string",
+          "default" : "trending"
+        }, {
+          "name": "tag",
+          "in": "query",
+	  "required": false,
+	  "type": "string",
+	  "format": "string",
+	  "default": ""
+	}, {
+          "name" : "observer",
+          "in" : "query",
+          "required" : true,
+          "type" : "string",
+          "format" : "string",
+          "default" : "alice"
+        } ],
+        "tags" : [ "Bridge" ],
+        "responses" : {
+          "200" : {
+            "description" : "Result",
+            "schema" : {
+              "type" : "array",
+              "items" : {
+                "$ref" : "#/definitions/_"
+              }
+            }
+          },
+          "default" : {
+            "description" : "Unexpected error",
+            "schema" : {
+              "$ref" : "#/definitions/Error"
+            }
+          }
+        }
+      }
+    },
+    "/list_all_subscriptions" : {
+      "get" : {
+        "summary" : "List all subscriptions to a community for an account.",
+        "description" : "Ref: https://developers.steem.io/apidefinitions/#bridge.list_all_subscriptions\n",
+        "parameters" : [ {
+          "name" : "account",
+          "in" : "query",
+          "required" : true,
+          "type" : "string",
+          "format" : "string",
+          "default" : "esteemapp"
+        }],
+        "tags" : [ "Bridge" ],
+        "responses" : {
+          "200" : {
+            "description" : "Result",
+            "schema" : {
+              "type" : "array",
+              "items" : {
+                "$ref" : "#/definitions/_"
+              }
+            }
+          },
+          "default" : {
+            "description" : "Unexpected error",
+            "schema" : {
+              "$ref" : "#/definitions/Error"
+            }
+          }
+        }
+      }
+    },
+    "/list_community_roles" : {
+      "get" : {
+        "summary" : "List community roles and labels for each account in the community.",
+        "description" : "Ref: https://developers.steem.io/apidefinitions/#bridge.list_community_roles\n",
+        "parameters" : [ {
+          "name" : "community",
+          "in" : "query",
+          "required" : true,
+          "type" : "string",
+          "format" : "string",
+          "default" : "hive-125125"
+        }],
+        "tags" : [ "Bridge" ],
+        "responses" : {
+          "200" : {
+            "description" : "Result",
+            "schema" : {
+              "type" : "array",
+              "items" : {
+                "$ref" : "#/definitions/_"
+              }
+            }
+          },
+          "default" : {
+            "description" : "Unexpected error",
+            "schema" : {
+              "$ref" : "#/definitions/Error"
+            }
+          }
+        }
+      }
+    },
+    "/account_notifications" : {
+      "get" : {
+        "summary" : "Account notifications.",
+        "description" : "Ref: https://developers.steem.io/apidefinitions/#bridge.account_notifications\n",
+        "parameters" : [ {
+          "name" : "account",
+          "in" : "query",
+          "required" : true,
+          "type" : "string",
+          "format" : "string",
+          "default" : "alice"
+        }, {
+          "name" : "limit",
+          "in" : "query",
+          "required" : true,
+          "type" : "number",
+          "format" : "number",
+          "default" : 10
         } ],
         "tags" : [ "Bridge" ],
         "responses" : {
@@ -264,7 +413,7 @@
           "required" : true,
           "type" : "number",
           "format" : "number",
-          "default" : "10-"
+          "default" : "10"
         }, {
           "name" : "limit",
           "in" : "query",
@@ -313,7 +462,7 @@
           "required" : true,
           "type" : "number",
           "format" : "number",
-          "default" : "10-"
+          "default" : "10"
         }, {
           "name" : "limit",
           "in" : "query",
@@ -484,7 +633,7 @@
           "format" : "number",
           "default" : 10
         } ],
-        "tags" : [ "Witness Api" ],
+        "tags" : [ "Condenser Api", "Witness Api" ],
         "responses" : {
           "200" : {
             "description" : "Result",
@@ -2282,7 +2431,7 @@
           "format" : "string",
           "default" : "good-karma"
         } ],
-        "tags" : [ "Account" ],
+        "tags" : [ "Condenser Api" ],
         "responses" : {
           "200" : {
             "description" : "Result",
@@ -2396,7 +2545,7 @@
           "format" : "array",
           "default" : "[\"good-karma\",\"fabien\"]"
         } ],
-        "tags" : [ "Account" ],
+        "tags" : [ "Condenser Api" ],
         "responses" : {
           "200" : {
             "description" : "Result",
@@ -2437,7 +2586,7 @@
           "format" : "number",
           "default" : 10
         } ],
-        "tags" : [ "Account" ],
+        "tags" : [ "Condenser Api" ],
         "responses" : {
           "200" : {
             "description" : "Result",
